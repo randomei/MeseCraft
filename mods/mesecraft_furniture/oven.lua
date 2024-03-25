@@ -238,7 +238,7 @@ oven.register_recipe("df_farming:cave_flour", "df_farming:cave_bread")
 oven.register_recipe("christmas_holiday_pack:gingerbread_dough", "christmas_holiday_pack:gingerbread")
 oven.register_recipe("farming:pumpkin_dough", "farming:pumpkin_bread")
 oven.register_recipe("default:clay_lump", "default:clay_brick")
-oven.register_recipe("default:clay", "mesecraft_baked_clay:natural")
+oven.register_recipe("default:clay", "bakedclay:natural")
 oven.register_recipe("farming:corn", "farming:corn_cob")
 oven.register_recipe("farming:potato", "farming:baked_potato")
 
