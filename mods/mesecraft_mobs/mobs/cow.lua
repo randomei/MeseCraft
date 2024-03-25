@@ -60,7 +60,7 @@ mobs:register_mob("mesecraft_mobs:cow", {
                 local name = clicker:get_player_name()
 
                 -- milk cow with empty bucket
-                if tool:get_name() == "mesecraft_bucket:bucket_empty" then
+                if tool:get_name() == "bucket:bucket_empty" then
 
                         --if self.gotten == true
                         if self.child == true then

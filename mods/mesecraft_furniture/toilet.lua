@@ -70,7 +70,7 @@ minetest.register_craft({
 	recipe = {
 	{'','','default:steel_ingot',},
 	{'default:steel_ingot','stairs:slab_wood','default:steel_ingot',},
-	{'default:steel_ingot','mesecraft_bucket:bucket_water','default:steel_ingot',},
+	{'default:steel_ingot','bucket:bucket_water','default:steel_ingot',},
 	}
 })
 

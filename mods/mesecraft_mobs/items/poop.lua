@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- I've removed the abm's and player poop functionality entirely and just kept the items.
 -- Plans: Add poop from animals that can be used for compost, biofuel, and fertilizer.
 -- Credit to the pooper mod for these.
@@ -5,7 +7,7 @@
 -- Register Nodes
 
 minetest.register_node("mesecraft_mobs:poop_pile", {
-	description = "Pile of Poop",
+	description = S"Pile of Poop",
 	tiles = {"mesecraft_mobs_items_poop_pile.png"},
 	groups = {crumbly = 3, soil = 1, falling_node = 1},
 	drop = "mesecraft_mobs:poop_turd" .. " 4",
@@ -16,7 +18,7 @@ minetest.register_node("mesecraft_mobs:poop_pile", {
 -- Register Crafts
 
 minetest.register_craftitem("mesecraft_mobs:poop_turd", {
-	description = "Poop",
+	description = S"Poop",
 	inventory_image = "mesecraft_mobs_items_poop_turd.png",
 	on_use = minetest.item_eat(1)
 })

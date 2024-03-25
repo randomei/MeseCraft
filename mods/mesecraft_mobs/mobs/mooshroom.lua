@@ -56,9 +56,9 @@ mobs:register_mob("mesecraft_mobs:mooshroom", {
                         local cow = minetest.add_entity(pos, "mesecraft_mobs:cow")
                         cow:setyaw(oldyaw)
                 -- Use bucket to milk
-                elseif item:get_name() == "mesecraft_bucket:bucket_empty" and clicker:get_inventory() then
+                elseif item:get_name() == "bucket:bucket_empty" and clicker:get_inventory() then
                         local inv = clicker:get_inventory()
-                        inv:remove_item("main", "mesecraft_bucket:bucket_empty")
+                        inv:remove_item("main", "bucket:bucket_empty")
                         -- If room, add milk to inventory, otherwise drop as item
                         if inv:room_for_item("main", {name= "mesecraft_mobs:milk_bucket"}) then
                                 clicker:get_inventory():add_item("main", "mesecraft_mobs:milk_bucket")

@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 --Blood Bucket and Blood Source items originally from "horror" mod by D00M3D.
 minetest.register_node("mesecraft_mobs:blood_flowing", {
         description = "blood_source",
@@ -36,7 +38,7 @@ minetest.register_node("mesecraft_mobs:blood_flowing", {
 })
 
 minetest.register_node("mesecraft_mobs:blood_source", {
-        description = "Blood Source",
+        description = S"Blood Source",
         inventory_image = minetest.inventorycube("mesecraft_mobs_items_blood_source.png^[opacity:190"),
         drawtype = "liquid",
         tiles = {
@@ -75,7 +77,7 @@ bucket.register_liquid(
         "mesecraft_mobs:blood_flowing",
         "mesecraft_mobs:bucket_blood",
         "mesecraft_mobs_items_blood_bucket.png",
-        "Blood Bucket"
+        S"Blood Bucket"
 )
 end
 

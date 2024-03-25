@@ -1,14 +1,14 @@
--- MeseCraft Game module: mesecraft_bucket
+-- MeseCraft Game module: bucket
 -- This version is forked from the Minetest Game mod "bucket".
 -- See README.txt for licensing and other information.
 
 
 -- Load support for game translation.
-local S = minetest.get_translator("mesecraft_bucket")
+local S = minetest.get_translator("bucket")
 
 -- Register the bucket craft item.
 minetest.register_craft({
-	output = "mesecraft_bucket:bucket_empty 1",
+	output = "bucket:bucket_empty 1",
 	recipe = {
 		{"default:steel_ingot", "", "default:steel_ingot"},
 		{"", "default:steel_ingot", ""},
@@ -16,8 +16,8 @@ minetest.register_craft({
 })
 
 -- Initialize
-mesecraft_bucket = {}
-mesecraft_bucket.liquids = {}
+bucket = {}
+bucket.liquids = {}
 
 -- Protection compatibility
 local function check_protection(pos, name, text)
@@ -44,15 +44,15 @@ end
 --                  source neighbour, even if defined as 'liquid_renewable = false'.
 --                  Needed to avoid creating holes in sloping rivers.
 -- This function can be called from any mod (that depends on bucket).
-function mesecraft_bucket.register_liquid(source, flowing, itemname, inventory_image, name,
+function bucket.register_liquid(source, flowing, itemname, inventory_image, name,
 		groups, force_renew)
-	mesecraft_bucket.liquids[source] = {
+	bucket.liquids[source] = {
 		source = source,
 		flowing = flowing,
 		itemname = itemname,
 		force_renew = force_renew,
 	}
-	mesecraft_bucket.liquids[flowing] = mesecraft_bucket.liquids[source]
+	bucket.liquids[flowing] = bucket.liquids[source]
 
 	if itemname ~= nil then
 		minetest.register_craftitem(itemname, {
@@ -108,15 +108,15 @@ function mesecraft_bucket.register_liquid(source, flowing, itemname, inventory_i
 				end
 
 				minetest.set_node(lpos, {name = source})
-				return ItemStack("mesecraft_bucket:bucket_empty")
+				return ItemStack("bucket:bucket_empty")
 			end
 		})
 	end
 end
 
-minetest.register_craftitem("mesecraft_bucket:bucket_empty", {
+minetest.register_craftitem("bucket:bucket_empty", {
 	description = S("Empty Bucket"),
-	inventory_image = "mesecraft_bucket.png",
+	inventory_image = "bucket.png",
 	groups = {tool = 1},
 	liquids_pointable = true,
 	on_use = function(itemstack, user, pointed_thing)
@@ -129,7 +129,7 @@ minetest.register_craftitem("mesecraft_bucket:bucket_empty", {
 		end
 		-- Check if pointing to a liquid source
 		local node = minetest.get_node(pointed_thing.under)
-		local liquiddef = mesecraft_bucket.liquids[node.name]
+		local liquiddef = bucket.liquids[node.name]
 		local item_count = user:get_wielded_item():get_count()
 
 		if liquiddef ~= nil
@@ -158,7 +158,7 @@ minetest.register_craftitem("mesecraft_bucket:bucket_empty", {
 				end
 
 				-- set to return empty buckets minus 1
-				giving_back = "mesecraft_bucket:bucket_empty "..tostring(item_count-1)
+				giving_back = "bucket:bucket_empty "..tostring(item_count-1)
 
 			end
 
@@ -184,11 +184,11 @@ minetest.register_craftitem("mesecraft_bucket:bucket_empty", {
 	end,
 })
 
-mesecraft_bucket.register_liquid(
+bucket.register_liquid(
 	"default:water_source",
 	"default:water_flowing",
-	"mesecraft_bucket:bucket_water",
-	"mesecraft_bucket_water.png",
+	"bucket:bucket_water",
+	"bucket_water.png",
 	S("Water Bucket"),
 	{tool = 1, water_bucket = 1}
 )
@@ -199,42 +199,42 @@ mesecraft_bucket.register_liquid(
 -- River water source is instead made renewable by the 'force renew' option
 -- used here.
 
-mesecraft_bucket.register_liquid(
+bucket.register_liquid(
 	"default:river_water_source",
 	"default:river_water_flowing",
-	"mesecraft_bucket:bucket_river_water",
-	"mesecraft_bucket_river_water.png",
+	"bucket:bucket_river_water",
+	"bucket_river_water.png",
 	S("River Water Bucket"),
 	{tool = 1, water_bucket = 1},
 	true
 )
 
-mesecraft_bucket.register_liquid(
+bucket.register_liquid(
 	"default:lava_source",
 	"default:lava_flowing",
-	"mesecraft_bucket:bucket_lava",
-	"mesecraft_bucket_lava.png",
+	"bucket:bucket_lava",
+	"bucket_lava.png",
 	S("Lava Bucket"),
 	{tool = 1}
 )
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "mesecraft_bucket:bucket_lava",
+	recipe = "bucket:bucket_lava",
 	burntime = 60,
-	replacements = {{"mesecraft_bucket:bucket_lava", "mesecraft_bucket:bucket_empty"}},
+	replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}},
 })
 
 -- Register buckets as dungeon loot
 if minetest.global_exists("dungeon_loot") then
 	dungeon_loot.register({
-		{name = "mesecraft_bucket:bucket_empty", chance = 0.55},
+		{name = "bucket:bucket_empty", chance = 0.55},
 		-- water in deserts/ice or above ground, lava otherwise
-		{name = "mesecraft_bucket:bucket_water", chance = 0.45,
+		{name = "bucket:bucket_water", chance = 0.45,
 			types = {"sandstone", "desert", "ice"}},
-		{name = "mesecraft_bucket:bucket_water", chance = 0.45, y = {0, 32768},
+		{name = "bucket:bucket_water", chance = 0.45, y = {0, 32768},
 			types = {"normal"}},
-		{name = "mesecraft_bucket:bucket_lava", chance = 0.45, y = {-32768, -1},
+		{name = "bucket:bucket_lava", chance = 0.45, y = {-32768, -1},
 			types = {"normal"}},
 	})
 end

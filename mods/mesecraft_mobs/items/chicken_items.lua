@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Register Chicken Egg
 minetest.register_node("mesecraft_mobs:egg", {
-        description = "Chicken Egg",
+        description = S"Chicken Egg",
         tiles = {"mesecraft_mobs_items_chicken_egg.png"},
         inventory_image  = "mesecraft_mobs_items_chicken_egg.png",
         visual_scale = 0.7,
@@ -23,7 +25,7 @@ minetest.register_node("mesecraft_mobs:egg", {
 })
 -- Register "Fried Egg"
 minetest.register_craftitem("mesecraft_mobs:chicken_egg_fried", {
-        description = "Fried Egg",
+        description = S"Fried Egg",
         inventory_image = "mesecraft_mobs_items_chicken_egg_fried.png",
         on_use = minetest.item_eat(2),
         groups = {food_egg_fried = 1, flammable = 2},
@@ -36,14 +38,14 @@ minetest.register_craft({
 })
 -- Register raw chicken.
 minetest.register_craftitem("mesecraft_mobs:chicken_raw", {
-description = "Raw Chicken",
+description = S"Raw Chicken",
         inventory_image = "mesecraft_mobs_items_chicken_raw.png",
         on_use = minetest.item_eat(2),
         groups = {food_meat_raw = 1, food_chicken_raw = 1, flammable = 2},
 })
 -- Register cooked chicken.
 minetest.register_craftitem("mesecraft_mobs:chicken_cooked", {
-description = "Cooked Chicken",
+description = S"Cooked Chicken",
         inventory_image = "mesecraft_mobs_items_chicken_cooked.png",
         on_use = minetest.item_eat(6),
         groups = {food_meat = 1, food_chicken = 1, flammable = 2},
@@ -57,7 +59,7 @@ minetest.register_craft({
 
 -- Register feather.
 minetest.register_craftitem("mesecraft_mobs:chicken_feather", {
-        description = "Chicken Feather",
+        description = S"Chicken Feather",
         inventory_image = "mesecraft_mobs_items_chicken_feather.png",
         groups = {flammable = 2},
 })

@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Rat by PilzAdam (B3D model by sirrobzeroone)
 --TODO SOUND
 mobs:register_mob("mesecraft_mobs:rat", {
@@ -53,11 +55,11 @@ mobs:spawn({
 })
 
 
-mobs:register_egg("mesecraft_mobs:rat", "Rat", "wool_grey.png", 1)
+mobs:register_egg("mesecraft_mobs:rat", S"Rat", "wool_grey.png", 1)
 
 -- cooked rat, yummy!
 minetest.register_craftitem("mesecraft_mobs:rat_cooked", {
-	description = "Cooked Rat",
+	description = S"Cooked Rat",
 	inventory_image = "mesecraft_mobs_items_rat_cooked.png",
 	on_use = minetest.item_eat(3),
 	groups = {food_rat = 1, flammable = 2},

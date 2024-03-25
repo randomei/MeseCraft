@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Cheese Wedge
 minetest.register_craftitem("mesecraft_mobs:cheese", {
-        description = "Cheese",
+        description = S"Cheese",
         inventory_image = "mesecraft_mobs_items_cheese.png",
         on_use = minetest.item_eat(4),
         groups = {food_cheese = 1, flammable = 2},
@@ -12,12 +14,12 @@ minetest.register_craft({
         output = "mesecraft_mobs:cheese",
         recipe = "mesecraft_mobs:milk_bucket",
         cooktime = 5,
-        replacements = {{ "mesecraft_mobs:milk_bucket", "mesecraft_bucket:bucket_empty"}}
+        replacements = {{ "mesecraft_mobs:milk_bucket", "bucket:bucket_empty"}}
 })
 
 -- Cheese Block
 minetest.register_node("mesecraft_mobs:cheeseblock", {
-        description = "Cheese Block",
+        description = S"Cheese Block",
         tiles = {"mesecraft_mobs_items_cheeseblock.png"},
         is_ground_content = false,
         groups = {crumbly = 3},

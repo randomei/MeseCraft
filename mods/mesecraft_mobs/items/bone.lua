@@ -1,5 +1,7 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 minetest.register_craftitem("mesecraft_mobs:bone", {
-                description = "Bone",
+                description = S"Bone",
                 inventory_image = "mesecraft_mobs_items_bone.png"
         })
 if minetest.get_modpath("bones") then

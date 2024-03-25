@@ -1,8 +1,10 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- todo: uses for silk.
 
 -- Spiderweb item.
 minetest.register_node("mesecraft_mobs:spiderweb", {
-	description = "Spiderweb",
+	description = S"Spiderweb",
 	drawtype = "plantlike",
 	visual_scale = 1.2,
 	tiles = {"mesecraft_mobs_items_spiderweb.png"},
@@ -25,7 +27,7 @@ minetest.register_node("mesecraft_mobs:spiderweb", {
 
 -- Spider Silk item.
 minetest.register_craftitem("mesecraft_mobs:silk", {
-	description = "Silk",
+	description = S"Silk",
 	inventory_image = "mesecraft_mobs_items_spider_silk.png",
 	groups = {flammable = 2},
 })

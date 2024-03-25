@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- butter
 minetest.register_craftitem("mesecraft_mobs:butter", {
-        description = "Butter",
+        description = S"Butter",
         inventory_image = "mesecraft_mobs_items_butter.png",
         on_use = minetest.item_eat(1),
         groups = {food_butter = 1, flammable = 2},
@@ -11,13 +13,13 @@ minetest.register_craft({
         type = "shapeless",
         output = "mesecraft_mobs:butter",
         recipe = {"mesecraft_mobs:milk_bucket", "farming:salt"},
-        replacements = {{ "mesecraft_mobs:milk_bucket", "mesecraft_bucket:bucket_empty"}}
+        replacements = {{ "mesecraft_mobs:milk_bucket", "bucket:bucket_empty"}}
 })
 else -- some saplings are high in sodium so makes a good replacement item
 minetest.register_craft({
         type = "shapeless",
         output = "mesecraft_mobs:butter",
         recipe = {"mesecraft_mobs:milk_bucket", "default:sapling"},
-        replacements = {{ "mesecraft_mobs:milk_bucket", "mesecraft_bucket:bucket_empty"}}
+        replacements = {{ "mesecraft_mobs:milk_bucket", "bucket:bucket_empty"}}
 })
 end

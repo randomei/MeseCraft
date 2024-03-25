@@ -18,16 +18,16 @@ end
 
 
 -- start timer on any already placed torches
-minetest.register_lbm({
-	name = "mesecraft_torch:convert_torch_to_node_timer",
-	nodenames = {"default:torch", "default:torch_wall", "default:torch_ceiling"},
-	action = function(pos)
-		if not minetest.get_node_timer(pos):is_started() then
-			minetest.get_node_timer(pos):start(
-				math.random(mesecraft_torch.min_duration, mesecraft_torch.max_duration))
-		end
-	end
-})
+--minetest.register_lbm({
+--	name = "mesecraft_torch:convert_torch_to_node_timer",
+--	nodenames = {"default:torch", "default:torch_wall", "default:torch_ceiling"},
+--	action = function(pos)
+--		if not minetest.get_node_timer(pos):is_started() then
+--			minetest.get_node_timer(pos):start(
+--				math.random(mesecraft_torch.min_duration, mesecraft_torch.max_duration))
+--		end
+--	end
+--})
 
 
 -- creative check

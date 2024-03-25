@@ -30,17 +30,17 @@ minetest.register_node("mesecraft_torch:torch", {
 
 
 -- override default torches to burn out after 8-10 minutes
-minetest.override_item("default:torch", {
-
-	on_timer = function(pos, elapsed)
-		local p2 = minetest.get_node(pos).param2
-		minetest.set_node(pos, {name = "mesecraft_torch:torch", param2 = p2})
-		minetest.sound_play({name="mesecraft_torch_burnout", gain = 0.1},
-			{pos = pos, max_hear_distance = 10})
-	end,
-
-	on_construct = function(pos)
-		minetest.get_node_timer(pos):start(
-			math.random(mesecraft_torch.min_duration, mesecraft_torch.max_duration))
-	end,
-})
+--minetest.override_item("default:torch", {
+--
+--	on_timer = function(pos, elapsed)
+--		local p2 = minetest.get_node(pos).param2
+--		minetest.set_node(pos, {name = "mesecraft_torch:torch", param2 = p2})
+--		minetest.sound_play({name="mesecraft_torch_burnout", gain = 0.1},
+--			{pos = pos, max_hear_distance = 10})
+--	end,
+--
+--	on_construct = function(pos)
+--		minetest.get_node_timer(pos):start(
+--			math.random(mesecraft_torch.min_duration, mesecraft_torch.max_duration))
+--	end,
+--})

@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Rotten flesh texture from mc_mobs.
 
 -- If "hbhunger" mod is present, rotten flesh is made poisonous.
@@ -7,7 +9,7 @@ end
 
 -- Register rotten flesh.
 minetest.register_craftitem("mesecraft_mobs:rotten_flesh", {
-        description = "Rotten Flesh",
+        description = S"Rotten Flesh",
         inventory_image = "mesecraft_mobs_items_rotten_flesh.png",
         on_use = minetest.item_eat(1),
 })

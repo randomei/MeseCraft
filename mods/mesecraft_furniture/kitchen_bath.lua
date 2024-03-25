@@ -34,7 +34,7 @@ minetest.register_craft({
 	output = 'mesecraft_furniture:bath_faucet',
 	recipe = {
 	{'default:steel_ingot','default:steel_ingot','default:steel_ingot',},
-	{'default:steel_ingot','','mesecraft_bucket:bucket_water',},
+	{'default:steel_ingot','','bucket:bucket_water',},
 	{'default:steel_ingot','','',},
 	}
 })
@@ -103,7 +103,7 @@ minetest.register_craft({
 	recipe = {
 	{'','','',},
 	{'','','',},
-	{'default:steel_ingot','mesecraft_bucket:bucket_empty','default:steel_ingot',},
+	{'default:steel_ingot','bucket:bucket_empty','default:steel_ingot',},
 	}
 })
 
@@ -111,7 +111,7 @@ minetest.register_craft({
 	output = 'mesecraft_furniture:shower_top',
 	recipe = {
 	{'','default:steel_ingot','',},
-	{'default:steel_ingot','mesecraft_bucket:bucket_water','default:steel_ingot',},
+	{'default:steel_ingot','bucket:bucket_water','default:steel_ingot',},
 	{'default:steel_ingot','','default:steel_ingot',},
 	}
 })
@@ -174,7 +174,7 @@ minetest.register_craft({
 	output = 'mesecraft_furniture:dw',
 	recipe = {
 	{'default:steel_ingot','default:steel_ingot','default:steel_ingot',},
-	{'default:steel_ingot','mesecraft_bucket:bucket_water','default:steel_ingot',},
+	{'default:steel_ingot','bucket:bucket_water','default:steel_ingot',},
 	{'default:steel_ingot','default:mese_crystal','default:steel_ingot',},
 	}
 })
@@ -268,7 +268,7 @@ end
 minetest.register_craft({
 	output = 'mesecraft_furniture:birdbath',
 	recipe = {
-	{'default:stone','mesecraft_bucket:bucket_water','default:stone',},
+	{'default:stone','bucket:bucket_water','default:stone',},
 	{'','default:stone','',},
 	{'default:stone','default:stone','default:stone',},
 	}

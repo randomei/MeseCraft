@@ -1,8 +1,10 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Items and drops for the clownfish.
 
 -- Register Raw Clownfish.
 minetest.register_craftitem("mesecraft_mobs:clownfish_raw", {
-        description = "Raw Clownfish",
+        description = S"Raw Clownfish",
         inventory_image = "mesecraft_mobs_items_clownfish_raw.png",
         on_use = minetest.item_eat(2),
         groups = {food_fish_raw = 1, flammable = 2},
@@ -10,7 +12,7 @@ minetest.register_craftitem("mesecraft_mobs:clownfish_raw", {
 
 -- Regiser Cooked Clownfish.
 minetest.register_craftitem("mesecraft_mobs:clownfish_cooked", {
-        description = "Cooked Clownfish",
+        description = S"Cooked Clownfish",
         inventory_image = "mesecraft_mobs_items_clownfish_cooked.png",
         on_use = minetest.item_eat(6),
         groups = {food_fish = 1, flammable = 2},

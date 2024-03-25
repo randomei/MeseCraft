@@ -47,7 +47,7 @@
                         {"group:food_sugar", "mesecraft_mobs:milk_bucket", "group:food_sugar"},
                         {"group:food_sugar", "group:food_sugar", "group:food_sugar"},
 		},
-		replacements = {{"mesecraft_mobs:milk_bucket", "mesecraft_bucket:bucket_empty"}},
+		replacements = {{"mesecraft_mobs:milk_bucket", "bucket:bucket_empty"}},
         })
 
 

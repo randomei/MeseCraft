@@ -40,14 +40,14 @@ minetest.register_tool("mesecraft_christmas:candy_cane_sword", {
 	}
 })
 
--- Add mesecraft_toolranks support
-if minetest.get_modpath("mesecraft_toolranks") then
+-- Add toolranks support
+if minetest.get_modpath("toolranks") then
 	-- Helper function
 	local function add_tool(name, desc, afteruse)
 		minetest.override_item(name, {
 			original_description = desc,
-			description = mesecraft_toolranks.create_description(desc, 0, 1),
-			after_use = afteruse and mesecraft_toolranks.new_afteruse
+			description = toolranks.create_description(desc, 0, 1),
+			after_use = afteruse and toolranks.new_afteruse
 		})
 	end
 	add_tool("mesecraft_christmas:candy_cane_pickaxe", "Candy Cane Pickaxe", true)

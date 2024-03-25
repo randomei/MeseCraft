@@ -1,8 +1,10 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Pork drops for pig.
 
 -- Register Raw Pork
 minetest.register_craftitem("mesecraft_mobs:pork_raw", {
-        description = "Raw Pork",
+        description = S"Raw Pork",
         inventory_image = "mesecraft_mobs_items_pork_raw.png",
         on_use = minetest.item_eat(4),
         groups = {food_meat_raw = 1, food_pork_raw = 1, flammable = 2},
@@ -10,7 +12,7 @@ minetest.register_craftitem("mesecraft_mobs:pork_raw", {
 
 -- Regiser Cooked Pork
 minetest.register_craftitem("mesecraft_mobs:pork_cooked", {
-        description = "Cooked Pork",
+        description = S"Cooked Pork",
         inventory_image = "mesecraft_mobs_items_pork_cooked.png",
         on_use = minetest.item_eat(8),
         groups = {food_meat = 1, food_pork = 1, flammable = 2},

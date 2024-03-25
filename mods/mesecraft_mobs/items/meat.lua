@@ -1,4 +1,4 @@
-local S = minetest.get_translator("mesecraft_mobs")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 -- raw meat from mobs_redo
 minetest.register_craftitem("mesecraft_mobs:meat", {

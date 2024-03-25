@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Graves are from church modpack. Edited to use simple text. Used for ghosts+zombies and maybe other deathly functions.
 
 screwdriver = screwdriver or {}
@@ -6,7 +8,7 @@ grave = {}
 
 --Register Gravestone node.
 minetest.register_node("mesecraft_mobs:gravestone", {
-        description = "Gravestone",
+        description = S"Gravestone",
         tiles = {"default_stone.png", "default_stone.png",
         "default_stone.png", "default_stone.png",
         "default_stone.png", "default_stone.png"},
@@ -43,15 +45,15 @@ minetest.register_node("mesecraft_mobs:gravestone", {
         on_receive_fields = function(pos, formname, fields, sender)
                 local meta = minetest.get_meta(pos)
                 fields.text = fields.text or ""
-                print((sender:get_player_name() or "").." wrote \""..fields.text..
-                                "\" to sign at "..minetest.pos_to_string(pos))
+                print((sender:get_player_name() or "")..S" wrote '"..fields.text..
+                                S"' to sign at "..minetest.pos_to_string(pos))
                 meta:set_string("text", fields.text)
                 meta:set_string("infotext", '"'..fields.text..'"')
         end,
 })
 -- Register Cross Gravestone
 minetest.register_node("mesecraft_mobs:gravestone_cross", {
-        description = "Cross Gravestone",
+        description = S"Cross Gravestone",
         tiles = {"default_stone.png", "default_stone.png",
         "default_stone.png", "default_stone.png",
         "default_stone.png", "default_stone.png"},
@@ -87,11 +89,11 @@ minetest.register_node("mesecraft_mobs:gravestone_cross", {
                 meta:set_string("infotext", "\"\"")
         end,
         on_receive_fields = function(pos, formname, fields, sender)
-                --print("Sign at "..minetest.pos_to_string(pos).." got "..dump(fields))
+                --print(S"Sign at "..minetest.pos_to_string(pos)..S" got "..dump(fields))
                 local meta = minetest.get_meta(pos)
                 fields.text = fields.text or ""
-                print((sender:get_player_name() or "").." wrote \""..fields.text..
-                                "\" to sign at "..minetest.pos_to_string(pos))
+                print((sender:get_player_name() or "")..S" wrote '"..fields.text..
+                                S"' to sign at "..minetest.pos_to_string(pos))
                 meta:set_string("text", fields.text)
                 meta:set_string("infotext", '"'..fields.text..'"')
         end,
