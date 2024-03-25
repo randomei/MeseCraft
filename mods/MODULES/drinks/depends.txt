@@ -1,4 +1,4 @@
-mesecraft_bucket
+bucket
 default
 vessels
 stairs

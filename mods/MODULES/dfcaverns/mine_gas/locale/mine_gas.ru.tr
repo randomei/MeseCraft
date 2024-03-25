@@ -1,0 +1,27 @@
+# textdomain: mine_gas
+
+
+### init.lua ###
+
+Gas Seep=газовая протечка
+
+Gas is highly hazardous. Heavier than air, it pools in deep caverns and asphyxiates the unwary.=Газ очень опасен. Тяжелее воздуха, он наполняет глубокие пещеры и душит неосторожных.
+
+Gaseous hydrocarbons formed from the detritus of long dead plants and animals processed by heat and pressure deep within the earth.=Газообразные углеводороды, получившиеся из детрита давно погибших растений и животных, которые были подвергнуты жару и давлению глубоко в недрах земли.
+
+Mine Gas=шахтовый газ
+Mining out such a deposit seals the crack.=Добыча из такого депозита запечатает трещину.
+
+Some coal deposits have cracks that seep a steady flow of mine gas.=У некоторых депозитов угля есть трещины, из которых просачивается шахтовый газ.
+
+When exposed to air and an ignition source it can produce a deadly explosion.=В смеси с воздухом, и при наличии источника воспламенения, может произойти смертельно-опасный взрыв.
+
+
+### wisp.lua ###
+
+Gas Wisp=газовый огонек
+
+Gas Wisps have no known use, and fortunately they are not hostile or very dangerous.=Газовые огоньки бесполезны, а также, к счатью, не враждебные и не очень опасные.
+
+Mysterious blue flames may occasionally be found flickering on the edges of oil lakes, burning without oxygen and seeming to maintain their size as they drift about through the unbreathable atmosphere.=Мистическое голубое пламя можно найти на границах нефтяных озер, горящее без кислорода, и похоже сохраняющее свой размер при движении через непригодную для дыхания атмосферу.
+

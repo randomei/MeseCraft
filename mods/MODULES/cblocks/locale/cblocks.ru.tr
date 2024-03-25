@@ -1,0 +1,21 @@
+# textdomain: cblocks
+Black=черный
+Blue=синий
+Brown=коричневый
+Cyan=голубой
+Dark Green=темно-зеленый
+Dark Grey=темно-серый
+Green=зеленый
+Grey=серый
+Magenta=пурпурный
+Orange=оранжевый
+Pink=розовый
+Red=красный
+Violet=фиолетовый
+White=белый
+Yellow=желтый
+%s Stair=%s (ступени)
+%s Slab=%s (плита)
+ Wooden Planks= деревянные доски
+ Stone Brick= каменный кирпич
+ Glass= стекло

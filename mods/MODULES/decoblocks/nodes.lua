@@ -1,5 +1,7 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 minetest.register_node("decoblocks:bamboo_fence", {
-	description = "Bamboo Fence",
+	description = S"Bamboo Fence",
 	tiles = {
 		"decoblocks_bamboo_fence_top.png",
 		"decoblocks_bamboo_fence_top.png",
@@ -45,7 +47,7 @@ minetest.register_node("decoblocks:bamboo_fence", {
 })
 
 minetest.register_node("decoblocks:scarecrow", {
-	description = "Scarecrow",
+	description = S"Scarecrow",
 	drawtype = "mesh",
 	mesh = "scarecrow.obj",
 	paramtype2 = "facedir",
@@ -71,7 +73,7 @@ minetest.register_node("decoblocks:scarecrow", {
 
 
 minetest.register_node("decoblocks:spikes", {
-	description = "Spikes",
+	description = S"Spikes",
 	drawtype = "firelike",
 	tiles = {
 		"decoblocks_spikes.png"
@@ -93,7 +95,7 @@ minetest.register_node("decoblocks:spikes", {
 })
 
 minetest.register_node("decoblocks:paper_lantern", {
-	description = "Paper Lantern",
+	description = S"Paper Lantern",
 	tiles = {"decoblocks_paper_lantern_top.png", "decoblocks_paper_lantern_top.png", "decoblocks_paper_lantern.png"},
 	paramtype = "light",
 	light_source = 13,

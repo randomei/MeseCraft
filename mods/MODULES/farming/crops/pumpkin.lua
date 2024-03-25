@@ -1,15 +1,11 @@
 
---[[
-	Big thanks to PainterlyPack.net for allowing me to use these textures
-]]
-
-local S = farming.intllib
+local S = farming.translate
 
 -- pumpkin slice
 minetest.register_craftitem("farming:pumpkin_slice", {
 	description = S("Pumpkin Slice"),
 	inventory_image = "farming_pumpkin_slice.png",
-	groups = {seed = 2, food_pumpkin_slice = 1, flammable = 2},
+	groups = {compostability = 48, seed = 2, food_pumpkin_slice = 1, flammable = 2},
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "farming:pumpkin_1")
 	end,
@@ -24,10 +20,11 @@ minetest.register_craft({
 	}
 })
 
+local tmp = farming.use_utensils and "farming:cutting_board" or ""
+
 minetest.register_craft({
-	type = "shapeless",
 	output = "farming:pumpkin_slice 4",
-	recipe = {"farming:pumpkin", "farming:cutting_board"},
+	recipe = {{"farming:pumpkin", tmp}},
 	replacements = {{"farming:cutting_board", "farming:cutting_board"}}
 })
 
@@ -35,13 +32,18 @@ minetest.register_craft({
 minetest.register_node("farming:jackolantern", {
 	description = S("Jack 'O Lantern (punch to turn on and off)"),
 	tiles = {
-		"farming_pumpkin_top.png", "farming_pumpkin_top.png",
-		"farming_pumpkin_side.png", "farming_pumpkin_side.png",
-		"farming_pumpkin_side.png", "farming_pumpkin_face_off.png"
+		"farming_pumpkin_bottom.png^farming_pumpkin_top.png",
+		"farming_pumpkin_bottom.png",
+		"farming_pumpkin_side.png",
+		"farming_pumpkin_side.png",
+		"farming_pumpkin_side.png",
+		"farming_pumpkin_side.png^farming_pumpkin_face_off.png"
 	},
 	paramtype2 = "facedir",
-	groups = {choppy = 1, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_wood_defaults(),
+	groups = {
+		handy = 1, snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 2
+	},
+	sounds = farming.sounds.node_sound_wood_defaults(),
 	on_punch = function(pos, node, puncher)
 		local name = puncher:get_player_name() or ""
 		if minetest.is_protected(pos, name) then return end
@@ -52,17 +54,20 @@ minetest.register_node("farming:jackolantern", {
 
 minetest.register_node("farming:jackolantern_on", {
 	tiles = {
-		"farming_pumpkin_top.png", "farming_pumpkin_top.png",
-		"farming_pumpkin_side.png", "farming_pumpkin_side.png",
-		"farming_pumpkin_side.png", "farming_pumpkin_face_on.png"
+		"farming_pumpkin_bottom.png^farming_pumpkin_top.png",
+		"farming_pumpkin_bottom.png",
+		"farming_pumpkin_side.png",
+		"farming_pumpkin_side.png",
+		"farming_pumpkin_side.png",
+		"farming_pumpkin_side.png^farming_pumpkin_face_on.png"
 	},
-	light_source = default.LIGHT_MAX - 1,
+	light_source = minetest.LIGHT_MAX - 1,
 	paramtype2 = "facedir",
 	groups = {
-		choppy = 1, oddly_breakable_by_hand = 1, flammable = 2,
+		handy = 1, snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 2,
 		not_in_creative_inventory = 1
 	},
-	sounds = default.node_sound_wood_defaults(),
+	sounds = farming.sounds.node_sound_wood_defaults(),
 	drop = "farming:jackolantern",
 	on_punch = function(pos, node, puncher)
 		local name = puncher:get_player_name() or ""
@@ -95,7 +100,7 @@ minetest.register_node("farming:scarecrow_bottom", {
 			{-12/16, 4/16, -1/16, 12/16, 2/16, 1/16},
 		}
 	},
-	groups = {snappy = 3, flammable = 2}
+	groups = {handy = 1, snappy = 3, flammable = 2}
 })
 
 minetest.register_craft({
@@ -122,8 +127,9 @@ minetest.register_craftitem("farming:pumpkin_dough", {
 
 minetest.register_craft({
 	output = "farming:pumpkin_dough",
-	type = "shapeless",
-	recipe = {"group:food_flour", "group:food_pumpkin_slice", "group:food_pumpkin_slice"}
+	recipe = {
+		{"group:food_pumpkin_slice", "group:food_flour", "group:food_pumpkin_slice"}
+	}
 })
 
 minetest.register_craft({
@@ -145,10 +151,10 @@ local def = {
 	drop = "",
 	selection_box = farming.select,
 	groups = {
-		snappy = 3, flammable = 2, plant = 1, attached_node = 1,
+		handy = 1, snappy = 3, flammable = 2, plant = 1, attached_node = 1,
 		not_in_creative_inventory = 1, growing = 1
 	},
-	sounds = default.node_sound_leaves_defaults()
+	sounds = farming.sounds.node_sound_leaves_defaults()
 }
 
 -- stage 1
@@ -182,16 +188,18 @@ minetest.register_node("farming:pumpkin_7", table.copy(def))
 minetest.register_node("farming:pumpkin_8", {
 	description = S("Pumpkin"),
 	tiles = {
-		"farming_pumpkin_top.png",
-		"farming_pumpkin_top.png",
+		"farming_pumpkin_bottom.png^farming_pumpkin_top.png",
+		"farming_pumpkin_bottom.png",
 		"farming_pumpkin_side.png"
 	},
 	groups = {
-		food_pumpkin = 1, choppy = 2, oddly_breakable_by_hand = 1,
+		food_pumpkin = 1, snappy = 3, choppy = 3, oddly_breakable_by_hand = 2,
 		flammable = 2, plant = 1
 	},
 	drop = "farming:pumpkin_8",
-	sounds = default.node_sound_wood_defaults()
+	sounds = farming.sounds.node_sound_wood_defaults(),
+	paramtype2 = "facedir",
+	on_place = minetest.rotate_node
 })
 
 minetest.register_alias("farming:pumpkin", "farming:pumpkin_8")
@@ -200,7 +208,35 @@ minetest.register_alias("farming:pumpkin", "farming:pumpkin_8")
 farming.registered_plants["farming:pumpkin"] = {
 	crop = "farming:pumpkin",
 	seed = "farming:pumpkin_slice",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 8
 }
+
+-- mapgen
+local mg = farming.mapgen == "v6"
+
+def = {
+	y_max = mg and 20 or 6,
+	near = mg and "group:water" or nil,
+	num = mg and 1 or -1,
+}
+
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = {"default:dirt_with_grass", "mcl_core:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0,
+		scale = farming.pumpkin,
+		spread = {x = 100, y = 100, z = 100},
+		seed = 576,
+		octaves = 3,
+		persist = 0.6
+	},
+	y_min = 1,
+	y_max = def.y_max,
+	decoration = "farming:pumpkin_8",
+	spawn_by = def.near,
+	num_spawn_by = def.num
+})

@@ -2,7 +2,7 @@
 -- fuel
 --
 helicopter.fuel = {['oil:oil_bucket'] = 4}
-helicopter.returns = "mesecraft_bucket:bucket_empty"
+helicopter.returns = "bucket:bucket_empty"
 
 minetest.register_entity('helicopter:pointer',{
 initial_properties = {

@@ -1,6 +1,8 @@
+  local S = minetest.get_translator(minetest.get_current_modname())
+
 --TOOLS
   minetest.register_tool('bees:smoker', {
-    description = 'Hive Smoker',
+    description = S'Hive Smoker',
     inventory_image = 'bees_smoker.png',
     tool_capabilities = {
       full_punch_interval = 3.0,
@@ -32,7 +34,7 @@
   })
 
   minetest.register_tool('bees:grafting_tool', {
-    description = 'Beehive Grafting Tool',
+    description = S'Beehive Grafting Tool',
     inventory_image = 'bees_grafting_tool.png',
     tool_capabilities = {
       full_punch_interval = 3.0,

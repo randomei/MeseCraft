@@ -1,7 +1,7 @@
 --[[
 More Blocks: crafting recipes
 
-Copyright © 2011-2019 Hugo Locurcio and contributors.
+Copyright © 2011-2020 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
@@ -349,9 +349,33 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:trap_clean_glass",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "moreblocks:clean_glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_clean_glass",
+	type = "shapeless",
+	recipe = {"moreblocks:sweeper", "moreblocks:trap_glass"},
+})
+
+minetest.register_craft({
 	output = "moreblocks:glow_glass",
 	type = "shapeless",
-	recipe = {"default:mese_crystal_fragment", "default:glass"},
+	recipe = {"default:torch", "default:glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:clean_glow_glass",
+	type = "shapeless",
+	recipe = {"default:torch", "moreblocks:clean_glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:clean_glow_glass",
+	type = "shapeless",
+	recipe = {"moreblocks:sweeper", "moreblocks:glow_glass"},
 })
 
 minetest.register_craft({
@@ -363,33 +387,97 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "moreblocks:trap_glow_glass",
 	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "moreblocks:glow_glass"},
+})
+
+-- several recipes are possible for the trap+clean+glow, we only present 3 of them
+minetest.register_craft({
+	output = "moreblocks:trap_clean_glow_glass",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "moreblocks:clean_glow_glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_clean_glow_glass",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "moreblocks:clean_glass", "default:torch"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_clean_glow_glass",
+	type = "shapeless",
+	recipe = {"moreblocks:sweeper", "moreblocks:trap_glow_glass" },
+})
+
+
+minetest.register_craft({
+	output = "moreblocks:super_glow_glass",
+	type = "shapeless",
+	recipe = {"default:torch", "default:torch", "default:glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:super_glow_glass",
+	type = "shapeless",
 	recipe = {"default:torch", "moreblocks:glow_glass"},
 })
 
 minetest.register_craft({
-	output = "moreblocks:super_glow_glass",
+	output = "moreblocks:clean_super_glow_glass",
 	type = "shapeless",
-	recipe = {"default:mese_crystal_fragment", "default:mese_crystal_fragment", "default:glass"},
+	recipe = {"default:torch", "default:torch", "moreblocks:clean_glass"},
 })
 
 minetest.register_craft({
-	output = "moreblocks:super_glow_glass",
+	output = "moreblocks:clean_super_glow_glass",
 	type = "shapeless",
-	recipe = {"default:mese_crystal_fragment", "moreblocks:glow_glass"},
+	recipe = {"default:torch", "moreblocks:clean_glow_glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:clean_super_glow_glass",
+	type = "shapeless",
+	recipe = {"moreblocks:sweeper", "moreblocks:super_glow_glass"},
 })
 
 
 minetest.register_craft({
 	output = "moreblocks:trap_super_glow_glass",
 	type = "shapeless",
-	recipe = {"default:mese_crystal_fragment", "default:glass", "default:mese_crystal_fragment", "default:torch"},
+	recipe = {"default:mese_crystal_fragment", "default:glass", "default:torch", "default:torch"},
 })
 
 minetest.register_craft({
 	output = "moreblocks:trap_super_glow_glass",
 	type = "shapeless",
-	recipe = {"default:torch", "moreblocks:super_glow_glass"},
+	recipe = {"default:mese_crystal_fragment", "moreblocks:super_glow_glass"},
 })
+
+-- several recipes are possible for the trap+clean+glow, we only present 4 of them
+minetest.register_craft({
+	output = "moreblocks:trap_clean_super_glow_glass",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "moreblocks:clean_super_glow_glass"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_clean_super_glow_glass",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "moreblocks:clean_glow_glass", "default:torch"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_clean_super_glow_glass",
+	type = "shapeless",
+	recipe = {"default:mese_crystal_fragment", "moreblocks:clean_glass", "default:torch", "default:torch"},
+})
+
+minetest.register_craft({
+	output = "moreblocks:trap_clean_super_glow_glass",
+	type = "shapeless",
+	recipe = {"moreblocks:sweeper", "moreblocks:trap_super_glow_glass" },
+})
+
 
 minetest.register_craft({
 	output = "moreblocks:coal_stone",
@@ -430,7 +518,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "moreblocks:trap_glass",
 	type = "shapeless",
-	recipe = {"default:torch", "default:glass"},
+	recipe = {"default:mese_crystal_fragment", "default:glass"},
 })
 
 minetest.register_craft({
@@ -466,7 +554,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "moreblocks:cactuschecker 4",
+	output = "moreblocks:cactus_checker 4",
 	recipe = {
 		{"default:stone", "default:cactus"},
 		{"default:cactus", "default:stone"},
@@ -513,6 +601,22 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "moreblocks:desert_cobble_compressed",
+	recipe = {
+		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"},
+		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"},
+		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"},
+	}
+})
+
+minetest.register_craft({
+	output = "default:desert_cobble 9",
+	recipe = {
+		{"moreblocks:desert_cobble_compressed"},
+	}
+})
+
+minetest.register_craft({
 	type = "cooking", output = "moreblocks:tar", recipe = "default:pine_tree",
 })
 
@@ -521,7 +625,7 @@ minetest.register_craft({
 	output = "moreblocks:copperpatina",
 	recipe = {"group:water_bucket", "default:copperblock"},
 	replacements = {
-		{"group:water_bucket", "mesecraft_bucket:bucket_empty"}
+		{"group:water_bucket", "bucket:bucket_empty"}
 	}
 })
 

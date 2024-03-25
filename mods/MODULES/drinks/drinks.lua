@@ -31,9 +31,9 @@ for juice,juice_def in pairs (drinks.drink_table) do
   minetest.register_node('drinks:jbu_'..juice..'', {
       description = S('Bucket of @1 Juice',juice_desc),
       drawtype = "plantlike",
-      tiles = {'mesecraft_bucket.png^(drinks_bucket_contents.png^[colorize:'..color..':200)'},
-      inventory_image = 'mesecraft_bucket.png^(drinks_bucket_contents.png^[colorize:'..color..':200)',
-      wield_image = 'mesecraft_bucket.png^(drinks_bucket_contents.png^[colorize:'..color..':200)',
+      tiles = {'bucket.png^(drinks_bucket_contents.png^[colorize:'..color..':200)'},
+      inventory_image = 'bucket.png^(drinks_bucket_contents.png^[colorize:'..color..':200)',
+      wield_image = 'bucket.png^(drinks_bucket_contents.png^[colorize:'..color..':200)',
       paramtype = "light",
       juice_type = juice_desc,
       is_ground_content = false,

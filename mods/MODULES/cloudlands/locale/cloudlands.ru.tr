@@ -1,0 +1,33 @@
+# textdomain: cloudlands
+
+
+### cloudlands.lua ###
+
+Ancient Portalstone=древний камень портала
+Bark of @1=Лай 
+Bert Shackleton=Берт Шаклетон
+Blossom=цветок
+Cobweb=паутина
+
+Construction requires 14 blocks of ancient portalstone. We have no knowledge of how portalstones were created, the means to craft them are likely lost to time, so our only source has been to scavenge the Nether for the remnants of ancient broken portals. A finished frame is four blocks wide, five blocks high, and stands vertically, like a doorway.=Для конструкции требуется 14 блоков древнего камня портала. У нас нет знания того как создавать портальные камни, это означает что их создание занимает скорее всего много времени, таким образом единственный источник - поиски в Аду остатков древних разрушенных порталов. Законченная рамка - 4 блока шириной, 5 блоков высотой, установленная вертикально как дверной проем.
+
+Dead bleached wood=мертвое отбеленное дерево
+Diary of Bert Shackleton=дневник Берта Шаклетона
+Fossil Display=ископаемый дисплей
+Fossilized Egg=окаменевшее яйцо
+Giant Ziricote=гигантский Зирикоте
+Giant tree=гигантское дерево
+Glowing @1=Светящийся @1
+Hallelujah Mountains Portal=Портал к горам Алелуйя
+Heart of the Tree=сердце дерева
+Leaves of a giant tree=листья гигантского дерева
+Sakura blossom=цветущая сакура
+
+The aerostat is lost.@n@nHowever, salvage attempts throughout the night managed to@nsave most provisions before it finally broke apart and fell.@n@n                                     ---@=@=@=@=---@n@nThis island is highly exposed and the weather did not treat@nthe tents well. We have enlarged a sheltered crag in the @1,@nbut it is laborous work and the condition of some of the party@nis becoming cause for concern.@n@nQuite a journey is now required, we cannot stay - nobody will@nlook for us here. McNish is attempting to strengthen the gliders.@n@n                                     ---@=@=@=@=---=Аэростат утрачен.@n@nТем не менее попытки сбора того, что осталось, в ночи позволили@nспасти большую часть провизии до того, как он окончательно развалился и упал.@n@n                                     ---@=@=@=@=---@n@nЭтот остров значительно открыт ветрам и погода плохо сказывается@nна тентах. Мы нарастили укрывающую нас скалу в @1,@nно это было очень трудоемко, и состояние некоторых членов команды@n начало вызывать беспокойство.@n@nТеперь нам предстоит дальнее путешествие, мы не можем оставаться - никто не будет@nискать нас здесь. МакНиш пытается усилить глайдеры.@n@n                                     ---@=@=@=@=---
+
+The only portal we managed to scavenge enough portalstone to build took us to a land of floating islands. There were hills and forests and even water up there, but the edges are a perilous drop — a depth of which we cannot even begin to plumb.=Единственный портал, из которого нам удалось извлечь достаточно портального камня, отправил нас на землю парящих островов. Там были холмы и леса, и даже вода на такой высоте, однако края опасны падением - глубина такая, что невозможно измерить.
+
+Weddell Outpost, November 21=Аутпост Ведделя, 21 ноября
+Wisteria blossom=цветок глицинии
+ice=лед
+rock=скала

@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- compass configuration interface - adjustable from other mods or minetest.conf settings
 ccompass = {}
 
@@ -55,14 +57,14 @@ function ccompass.set_target(stack, param)
 	local meta=stack:get_meta()
 	meta:set_string("target_pos", param.target_pos_string)
 	if param.target_name == "" then
-		meta:set_string("description", "Magic Compass to "..param.target_pos_string)
+		meta:set_string("description", S"Magic Compass to "..param.target_pos_string)
 	else
-		meta:set_string("description", "Magic Compass to "..param.target_name)
+		meta:set_string("description", S"Magic Compass to "..param.target_name)
 	end
 
 	if param.playername then
 		local player = minetest.get_player_by_name(param.playername)
-		minetest.chat_send_player(param.playername, "Calibration done to "..param.target_name.." "..param.target_pos_string)
+		minetest.chat_send_player(param.playername, S"Calibration done to "..param.target_name.." "..param.target_pos_string)
 		minetest.sound_play({ name = "ccompass_calibrate", gain = 1 }, { pos = player:get_pos(), max_hear_distance = 3 })
 	end
 end
@@ -132,7 +134,7 @@ end
 local function on_use_function(itemstack, player, pointed_thing)
 	-- possible only on nodes
 	if pointed_thing.type ~= "node" then --support nodes only for destination
-		minetest.chat_send_player(player:get_player_name(), "Calibration can be done on nodes only")
+		minetest.chat_send_player(player:get_player_name(), S"Calibration can be done on nodes only")
 		return
 	end
 
@@ -149,7 +151,7 @@ local function on_use_function(itemstack, player, pointed_thing)
 	if not ccompass.recalibrate then
 		local destination = itemstack:get_meta():get_string("target_pos")
 		if destination ~= "" then
-			minetest.chat_send_player(player:get_player_name(), "Compass already calibrated")
+			minetest.chat_send_player(player:get_player_name(), S"Compass already calibrated")
 			return
 		end
 	end
@@ -157,7 +159,7 @@ local function on_use_function(itemstack, player, pointed_thing)
 	-- target nodes restricted?
 	if ccompass.restrict_target then
 		if not ccompass.restrict_target_nodes[node.name] then
-			minetest.chat_send_player(player:get_player_name(), "Calibration on this node not possible")
+			minetest.chat_send_player(player:get_player_name(), S"Calibration on this node not possible")
 			return
 		end
 	end
@@ -232,7 +234,7 @@ for i = 0, 15 do
 		groups.not_in_creative_inventory = 1
 	end
 	minetest.register_tool("ccompass:"..i, {
-		description = "Magic Compass",
+		description = S"Magic Compass",
 		inventory_image = image,
 		wield_image = image,
 		groups = groups,

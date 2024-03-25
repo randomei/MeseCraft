@@ -1,7 +1,9 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 -- Wooden tapestry top
 minetest.register_node("curtains:tapestry_top", {
         drawtype = "nodebox",
-        description = "Wooden Curtain Rod",
+        description = S"Wooden Curtain Rod",
         tiles = {"default_wood.png"},
         sunlight_propagates = true,
         groups = {flammable=3,choppy=2,oddly_breakable_by_hand=1},
@@ -32,21 +34,21 @@ minetest.register_craft({
 
 -- Curtains
 local curtain_colors = { --name, color, colorize(hex or color name:intensity(1-255))
-{'Black', 'black', '#26231f:200'},
-{'Blue', 'blue', '#284965:200'},
-{'Brown', 'brown', '#65493f:200'},
-{'Cyan', 'cyan', '#3a8d94:200'},
-{'Dark Green', 'dark_green', '#485831:200'},
-{'Dark Grey', 'dark_grey', '#464342:200'},
-{'Green', 'green', '#739251:200'},
-{'Grey', 'grey', '#85817e:200'},
-{'Magenta', 'magenta', '#b74679:200'},
-{'Orange', 'orange', '#bb6c3e:200'},
-{'Pink', 'pink', '#a2655f:200'},
-{'Red', 'red', '#893734:200'},
-{'Violet', 'violet', '#5e3170:200'},
-{'White', 'white', '#bcb2a6:200'},
-{'Yellow', 'yellow', '#c0a342:200'},
+{S'Black', 'black', '#26231f:200'},
+{S'Blue', 'blue', '#284965:200'},
+{S'Brown', 'brown', '#65493f:200'},
+{S'Cyan', 'cyan', '#3a8d94:200'},
+{S'Dark Green', 'dark_green', '#485831:200'},
+{S'Dark Grey', 'dark_grey', '#464342:200'},
+{S'Green', 'green', '#739251:200'},
+{S'Grey', 'grey', '#85817e:200'},
+{S'Magenta', 'magenta', '#b74679:200'},
+{S'Orange', 'orange', '#bb6c3e:200'},
+{S'Pink', 'pink', '#a2655f:200'},
+{S'Red', 'red', '#893734:200'},
+{S'Violet', 'violet', '#5e3170:200'},
+{S'White', 'white', '#bcb2a6:200'},
+{S'Yellow', 'yellow', '#c0a342:200'},
 }
 
 for i in pairs(curtain_colors) do
@@ -55,7 +57,7 @@ for i in pairs(curtain_colors) do
 		local hex = curtain_colors[i][3]
 		
 		minetest.register_node("curtains:curtain_"..color, {
-		description = color:gsub("^%l", string.upper).." Curtain",
+		description = name..S" Curtain",
 		walkable = false,
 		tiles = {"homedecor_curtain.png^[colorize:"..hex},
 		inventory_image = "homedecor_curtain.png^[colorize:"..hex,

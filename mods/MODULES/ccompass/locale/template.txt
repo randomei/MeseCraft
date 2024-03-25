@@ -1,0 +1,7 @@
+# textdomain: ccompass
+Magic Compass to =
+Calibration done to =
+Calibration can be done on nodes only=
+Compass already calibrated=
+Calibration on this node not possible=
+Magic Compass=

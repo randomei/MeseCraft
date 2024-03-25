@@ -1,6 +1,6 @@
 -- edited this version to not have nametags on the HUD.
 
-local S = mobs.intllib
+local S = minetest.get_translator(minetest.get_current_modname())
 
 -- define table containing names for use and shop items for sale
 

@@ -1,6 +1,7 @@
+local S = minetest.get_translator(minetest.get_current_modname())
 
 minetest.register_node("castle:dungeon_stone", {
-	description = "Dungeon Stone",
+	description = S"Dungeon Stone",
 	drawtype = "normal",
 	tiles = {"castle_dungeon_stone.png"},
 	groups = {cracky = 2},
@@ -15,7 +16,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("castle:crate", {
-	description = "Crate",
+	description = S"Crate",
 	drawtype = "normal",
 	tiles = {
 		"castle_crate_top.png", "castle_crate_top.png",

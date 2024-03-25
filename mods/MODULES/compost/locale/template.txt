@@ -1,0 +1,9 @@
+# textdomain: compost
+loading...=
+progress: @1%=
+To start composting, place some organic matter inside.=
+ moves stuff to compost bin at =
+ takes stuff from compost bin at =
+Empty Compost Bin=
+Compost Bin=
+ loaded.=

@@ -1,0 +1,9 @@
+# textdomain: compost
+loading...=загружается...
+progress: @1%=прогресс: @1%
+To start composting, place some organic matter inside.=Чтобы начать компостирование, добавьте органику внутрь.
+ moves stuff to compost bin at = кладёт что-то в компостный ящик на 
+ takes stuff from compost bin at = берёт что-то из компостного ящика на 
+Empty Compost Bin=пустой компостный ящик
+Compost Bin=компостный ящик
+ loaded.= загрузился.

@@ -39,11 +39,11 @@ msgstr "берёт что-то из компостного ящика на"
 
 #: init.lua
 msgid "Empty Compost Bin"
-msgstr "Пустой компостный ящик"
+msgstr "пустой компостный ящик"
 
 #: init.lua
 msgid "Compost Bin"
-msgstr "Компостный ящик"
+msgstr "компостный ящик"
 
 #: init.lua
 msgid " loaded."

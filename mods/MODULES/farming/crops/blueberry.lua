@@ -1,12 +1,15 @@
 
-local S = farming.intllib
+local S = farming.translate
+local a = farming.recipe_items
 
 -- blueberries
 minetest.register_craftitem("farming:blueberries", {
-	description = S("Blueberries"),
+	description = S("Wild Blueberries"),
 	inventory_image = "farming_blueberries.png",
-	groups = {seed = 2, food_blueberries = 1, food_blueberry = 1,
-			food_berry = 1, flammable = 2},
+	groups = {
+		compostability = 48,seed = 2, food_blueberries = 1, food_blueberry = 1,
+		food_berry = 1, flammable = 2
+	},
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "farming:blueberry_1")
 	end,
@@ -17,7 +20,8 @@ minetest.register_craftitem("farming:blueberries", {
 minetest.register_craftitem("farming:muffin_blueberry", {
 	description = S("Blueberry Muffin"),
 	inventory_image = "farming_blueberry_muffin.png",
-	on_use = minetest.item_eat(2)
+	on_use = minetest.item_eat(2),
+	groups = {compostability = 65}
 })
 
 minetest.register_craft({
@@ -31,17 +35,23 @@ minetest.register_craft({
 minetest.register_craftitem("farming:blueberry_pie", {
 	description = S("Blueberry Pie"),
 	inventory_image = "farming_blueberry_pie.png",
-	on_use = minetest.item_eat(6)
+	on_use = minetest.item_eat(6),
+	groups = {compostability = 75}
 })
 
 minetest.register_craft({
 	output = "farming:blueberry_pie",
-	type = "shapeless",
 	recipe = {
-		"group:food_flour", "group:food_sugar",
-		"group:food_blueberries", "group:food_baking_tray"
+		{"group:food_flour", "group:food_sugar", "group:food_blueberries"},
+		{"", a.baking_tray, ""}
 	},
 	replacements = {{"group:food_baking_tray", "farming:baking_tray"}}
+})
+
+-- Blue Dye
+minetest.register_craft({
+	output = a.dye_blue,
+	recipe = {{"farming:blueberries"}}
 })
 
 -- blueberry definition
@@ -55,10 +65,10 @@ local def = {
 	drop = "",
 	selection_box = farming.select,
 	groups = {
-		snappy = 3, flammable = 2, plant = 1, attached_node = 1,
+		handy = 1, snappy = 3, flammable = 2, plant = 1, attached_node = 1,
 		not_in_creative_inventory = 1, growing = 1
 	},
-	sounds = default.node_sound_leaves_defaults()
+	sounds = farming.sounds.node_sound_leaves_defaults()
 }
 
 -- stage 1
@@ -75,11 +85,12 @@ minetest.register_node("farming:blueberry_3", table.copy(def))
 -- stage 4 (final)
 def.tiles = {"farming_blueberry_4.png"}
 def.groups.growing = nil
+def.selection_box = farming.select_final
 def.drop = {
 	items = {
 		{items = {"farming:blueberries 2"}, rarity = 1},
 		{items = {"farming:blueberries"}, rarity = 2},
-		{items = {"farming:blueberries"}, rarity = 3},
+		{items = {"farming:blueberries"}, rarity = 3}
 	}
 }
 minetest.register_node("farming:blueberry_4", table.copy(def))
@@ -88,7 +99,25 @@ minetest.register_node("farming:blueberry_4", table.copy(def))
 farming.registered_plants["farming:blueberries"] = {
 	crop = "farming:blueberry",
 	seed = "farming:blueberries",
-	minlight = 13,
-	maxlight = 15,
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 4
 }
+
+-- mapgen
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = {"default:dirt_with_grass", "mcl_core:dirt_with_grass"},
+	sidelen = 16,
+	noise_params = {
+		offset = 0,
+		scale = farming.blueberry,
+		spread = {x = 100, y = 100, z = 100},
+		seed = 678,
+		octaves = 3,
+		persist = 0.6
+	},
+	y_min = 3,
+	y_max = 15,
+	decoration = "farming:blueberry_4"
+})

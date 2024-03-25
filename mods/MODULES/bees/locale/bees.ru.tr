@@ -1,0 +1,33 @@
+# textdomain: bees
+Honey Extractor Machine=экстрактор меда
+Flying Bees=Летающие пчелы
+Wild Bee Hive=дикий улей
+Bee Hive=улей
+This hive colony died! Not enough flowers in area.=Эта колония пчел умерла! Недостаточно цветов вокруг.
+Requires a queen bee to function.=Требуется матка для функционирования.
+Bees are busy making honey!=Пчелы заняты созданием меда!
+Hive does not have empty frame(s)!=Улью не хватает пустых каркасов!
+Hive requires a queen bee to function!=Улью необнодима матка для функционирования!
+A queen bee is inserted. Add empty frames!=Матка внесена. Добавьте пустые каркасы!
+Bees are settling in!=Пчелы обживаются!
+
+#craftitems.lua
+Empty Hive Frame=пустой каркас улья
+Filled Hive Frame=заполненный каркас улья
+Bottle of Honey=бутылка меда
+Bees Wax=пчелиный воск
+Honeycomb=соты
+Queen Bee=пчелиная матка
+
+#nodes.lua
+Honeycomb Block=блок сот
+
+#tools.lua
+Hive Smoker=выкуриватель ульев
+Beehive Grafting Tool=инструмент создания улья
+
+#bee.lua
+Bee=Пчела
+Honey=мед
+Beehive=улей
+Honey Block=блок меда

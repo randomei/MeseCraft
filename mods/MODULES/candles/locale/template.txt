@@ -1,0 +1,13 @@
+# textdomain: candles
+Candle=
+Silver Candle Stick=
+Gold Candle Stick=
+Bronze Candle Stick=
+Silver Wall-Mount Candle=
+Gold Wall-Mount Candle=
+Bronze Wall-Mount Candle=
+Silver Candelebra=
+Gold Candelebra=
+Bronze Candelebra=
+Gold Chandelier=
+Unlit Gold Chandelier=

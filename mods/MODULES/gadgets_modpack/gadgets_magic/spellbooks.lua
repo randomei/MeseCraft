@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 gadgets.register_gadget({
     name = "gadgets_magic:tome_speed",
-    description = "Tome Of Speed",
+    description = S"Tome Of Speed",
     texture = "gadgets_magic_tome_speed.png",
     mana_per_use = 100,
     light_source = 8,
@@ -20,7 +22,7 @@ gadgets.register_gadget({
 
 gadgets.register_gadget({
     name = "gadgets_magic:tome_jump",
-    description = "Tome Of Jump",
+    description = S"Tome Of Jump",
     texture = "gadgets_magic_tome_jump.png",
     mana_per_use = 100,
     light_source = 7,
@@ -40,7 +42,7 @@ gadgets.register_gadget({
 
 gadgets.register_gadget({
     name = "gadgets_magic:tome_gravity",
-    description = "Tome Of Gravity",
+    description = S"Tome Of Gravity",
     texture = "gadgets_magic_tome_gravity.png",
     mana_per_use = 100,
     light_source = 3,
@@ -60,7 +62,7 @@ gadgets.register_gadget({
 
 gadgets.register_gadget({
     name = "gadgets_magic:tome_blink",
-    description = "Tome Of Blink",
+    description = S"Tome Of Blink",
     texture = "gadgets_magic_tome_blink.png",
     mana_per_use = 150,
     light_source = 5,
@@ -152,7 +154,7 @@ gadgets.register_gadget({
 
 gadgets.register_gadget({
     name = "gadgets_magic:tome_bridge",
-    description = "Tome Of Magical Bridge",
+    description = S"Tome Of Magical Bridge",
     texture = "gadgets_magic_tome_magic_bridge.png",
     mana_per_use = 100,
     light_source = 7,
@@ -224,7 +226,7 @@ gadgets.register_gadget({
 
 gadgets.register_gadget({
     name = "gadgets_magic:tome_light",
-    description = "Tome Of Magical Light",
+    description = S"Tome Of Magical Light",
     texture = "gadgets_magic_tome_light.png",
     mana_per_use = 100,
     light_source = 13,

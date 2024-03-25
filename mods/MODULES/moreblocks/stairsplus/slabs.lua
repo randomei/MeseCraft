@@ -1,7 +1,7 @@
 --[[
 More Blocks: slab definitions
 
-Copyright © 2011-2019 Hugo Locurcio and contributors.
+Copyright © 2011-2020 Hugo Locurcio and contributors.
 Licensed under the zlib license. See LICENSE.md for more information.
 --]]
 
@@ -15,7 +15,7 @@ local function register_slab(modname, subname, recipeitem, groups, images, descr
 		description = description,
 		drop = drop,
 		light_source = light,
-		sounds = default.node_sound_stone_defaults(),
+		sounds = moreblocks.node_sound_stone_defaults(),
 	})
 end
 

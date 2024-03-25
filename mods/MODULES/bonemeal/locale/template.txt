@@ -1,7 +1,8 @@
+# textdomain: bonemeal
 # init.lua
 
-Mulch = 
-Bone Meal = 
-Fertiliser = 
-Bone = 
-[bonemeal] loaded = 
+Mulch=
+Bone Meal=
+Fertiliser=
+Bone=
+[bonemeal] loaded=

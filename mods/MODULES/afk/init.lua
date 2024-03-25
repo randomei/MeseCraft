@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 afk = {}
 -- Interval between movement checks (in seconds).
 local INTERVAL = 5
@@ -47,7 +49,7 @@ local function check_moved()
                sit = true --indicate that the player is sitting and that we have caused the sitting, for this iteration (used to keep player's animation as lay if they are dead)
                chat_noafk[plname] = false --take them off the list of players that are not afk
                if chat_afk[plname] == false then  -- so they ARE afk after the timeout, but if they are not on the list of players that we have given an afk chat message about, then give the chat message now, and then indicate that we have given an afk message about them, so that we don't do it again.
-                  minetest.chat_send_all("*** "..plname.." is AFK.") -- changed the number of stars to differentiate it from user-generated messages
+                  minetest.chat_send_all("*** "..plname..S" is AFK.") -- changed the number of stars to differentiate it from user-generated messages
                   chat_afk[plname] = true
                   attached_before_afk[plname] = default.player_attached[plname] -- for first time afk, the attached state has not been messed with yet by this mod. Save its state now to know whether to unattach the player when they come back
                   afk.afk_count = afk.afk_count + 1
@@ -63,7 +65,7 @@ local function check_moved()
          chat_afk[plname] = false --make sure we know that they are not afk for future reference
          -- If a player returns and the status changes, we print a message to chat.
          if chat_noafk[plname] == false then --if we didn't make them sit this iteration, its bc they are active. If their index on the not_afk list says that they ARE afk, then we haven't updated that info. SO,
-            minetest.chat_send_all("*** "..plname.." came back from AFK.") --let everyone know
+            minetest.chat_send_all("*** "..plname..S" came back from AFK.") --let everyone know
             afk.afk_count = afk.afk_count - 1
             chat_noafk[plname] = true --and update their status
             if not(attached_before_afk[plname]) then -- only change animation and attached state to false IF they were not attached before they went afk. Let other mods handle setting them to not attached if they caused it

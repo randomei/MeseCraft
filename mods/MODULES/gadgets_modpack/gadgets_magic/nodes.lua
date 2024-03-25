@@ -1,5 +1,7 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 minetest.register_node("gadgets_magic:magic_lantern", {
-    description = "Magic Lantern",
+    description = S"Magic Lantern",
     tiles = {"gadgets_magic_magic_lantern.png"},
     drop = "",
     light_source = 12,
@@ -8,7 +10,7 @@ minetest.register_node("gadgets_magic:magic_lantern", {
 })
 
 minetest.register_node("gadgets_magic:magic_bridge", {
-    description = "Magic Bridge Block",
+    description = S"Magic Bridge Block",
     tiles = {"gadgets_magic_magic_bridge_node.png"},
     drawtype = "glasslike",
     diggable = false,

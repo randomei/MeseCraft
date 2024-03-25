@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 bweapons.register_weapon({
     name = "bweapons_bows_pack:wooden_bow",
-    description = "Wooden Bow",
+    description = S"Wooden Bow",
     texture = "bweapons_bows_pack_wooden_bow.png",
     has_durability = true,
     uses = 128,
@@ -43,7 +45,7 @@ bweapons.register_weapon({
 
 bweapons.register_weapon({
     name = "bweapons_bows_pack:crossbow",
-    description = "Crossbow",
+    description = S"Crossbow",
     texture = "bweapons_bows_pack_crossbow.png",
     has_durability = true,
     uses = 256,

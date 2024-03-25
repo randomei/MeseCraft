@@ -4,6 +4,7 @@
 -- 2020-02-19
 
 local activewidth=8  -- Number of inventory slots to check.
+local S = minetest.get_translator(minetest.get_current_modname())
 
 minetest.register_globalstep(function(dtime)
 	local players  = minetest.get_connected_players()
@@ -75,7 +76,7 @@ for i,img in ipairs(images) do
 				inv = 0
 		end
 		minetest.register_tool("24hr_clock:clock"..(i-1), {
-				description = "24-Hour Clock",
+				description = S"24-Hour Clock",
 				inventory_image = img,
 				wield_image = img,
 				groups = {not_in_creative_inventory=inv}

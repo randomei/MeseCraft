@@ -1,0 +1,9 @@
+# textdomain: df_ambience
+
+
+### init.lua ###
+
+Muted, no new sounds will start playing once current sounds finish=Заглушен, новые звуки не будут начинать проигрываться, после окончания текущих.
+
+Mutes or unmutes ambient sounds in deep caverns=Включает и выключает звуки в глубоких пещерах
+Unmuted=Звук включен

@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 local fireball_blacklist = {
     "default:water_source",
     "default:river_water_source",
@@ -7,7 +9,7 @@ local fireball_blacklist = {
 
 bweapons.register_weapon({
     name = "bweapons_magic_pack:tome_fireball",
-    description = "Tome of Fireball",
+    description = S"Tome of Fireball",
     texture = "bweapons_magic_pack_tome_fireball.png",
     light_source = 9,
     mana_per_use = 35,
@@ -77,7 +79,7 @@ bweapons.register_weapon({
 
 bweapons.register_weapon({
     name = "bweapons_magic_pack:tome_iceshard",
-    description = "Tome of Ice Shard",
+    description = S"Tome of Ice Shard",
     texture = "bweapons_magic_pack_tome_iceshard.png",
     light_source = 10,
     mana_per_use = 40,
@@ -145,7 +147,7 @@ bweapons.register_weapon({
 
 bweapons.register_weapon({
     name = "bweapons_magic_pack:tome_electrosphere",
-    description = "Tome of Electrosphere",
+    description = S"Tome of Electrosphere",
     texture = "bweapons_magic_pack_tome_electrosphere.png",
     light_source = 8,
     mana_per_use = 37,
@@ -209,7 +211,7 @@ bweapons.register_weapon({
 
 bweapons.register_weapon({
     name = "bweapons_magic_pack:staff_magic",
-    description = "Staff of Energy",
+    description = S"Staff of Energy",
     texture = "bweapons_magic_pack_staff_magic.png",
     light_source = 8,
     has_durability = true,
@@ -266,7 +268,7 @@ bweapons.register_weapon({
 
 bweapons.register_weapon({
     name = "bweapons_magic_pack:staff_light",
-    description = "Staff of Light",
+    description = S"Staff of Light",
     texture = "bweapons_magic_pack_staff_light.png",
     light_source = 10,
     has_durability = true,
@@ -322,7 +324,7 @@ bweapons.register_weapon({
 
 bweapons.register_weapon({
     name = "bweapons_magic_pack:staff_void",
-    description = "Staff of Void",
+    description = S"Staff of Void",
     texture = "bweapons_magic_pack_staff_void.png",
     light_source = 3,
     has_durability = true,

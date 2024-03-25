@@ -1,0 +1,12 @@
+# textdomain: gadgets_default_effects
+Speed 1=
+Speed 2=
+Jump 1=
+Jump 2=
+Gravity 1=
+Gravity 2=
+Health Regen=
+Water Breath=
+Fire Shield=
+Stamina Regen=
+Mana Regen=

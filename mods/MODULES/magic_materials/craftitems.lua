@@ -1,104 +1,106 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 minetest.register_craftitem("magic_materials:arcanite_crystal", {
-    description = "Arcanite Crystal",
+    description = S"Arcanite Crystal",
     inventory_image = "magic_materials_arcanite_crystal.png",
 })
 
 minetest.register_craftitem("magic_materials:arcanite_fragments", {
-    description = "Arcanite Fragments",
+    description = S"Arcanite Fragments",
     inventory_image = "magic_materials_arcanite_fragments.png",
 })
 
 minetest.register_craftitem("magic_materials:egerum_crystal", {
-    description = "Egerum Crystal",
+    description = S"Egerum Crystal",
     inventory_image = "magic_materials_egerum_crystal.png",
 })
 
 minetest.register_craftitem("magic_materials:februm_crystal", {
-    description = "Februm Crystal",
+    description = S"Februm Crystal",
     inventory_image = "magic_materials_februm_crystal.png",
     light_source = 5,
 })
 
 minetest.register_craftitem("magic_materials:enchanted_book", {
-    description = "Blank Enchanted Book",
+    description = S"Blank Enchanted Book",
     inventory_image = "magic_materials_enchanted_book.png",
     light_source = 6,
 })
 
 minetest.register_craftitem("magic_materials:enchanted_page", {
-    description = "Enchanted Page",
+    description = S"Enchanted Page",
     inventory_image = "magic_materials_enchanted_page.png",
     light_source = 5,
 })
 
 minetest.register_craftitem("magic_materials:enchanted_rune", {
-    description = "Enchanted Rune",
+    description = S"Enchanted Rune",
     inventory_image = "magic_materials_enchanted_rune.png",
     light_source = 5,
 })
 
 minetest.register_craftitem("magic_materials:enchanted_staff", {
-    description = "Blank Enchanted Staff",
+    description = S"Blank Enchanted Staff",
     inventory_image = "magic_materials_enchanted_staff.png",
     light_source = 6,
 })
 
 minetest.register_craftitem("magic_materials:magic_root", {
-    description = "Magic Root",
+    description = S"Magic Root",
     inventory_image = "magic_materials_magic_root.png",
     light_source = 5,
 })
 
 minetest.register_craftitem("magic_materials:magic_flower", {
-    description = "Magic Flower",
+    description = S"Magic Flower",
     inventory_image = "magic_materials_magic_flower.png",
     light_source = 5,
 })
 
 minetest.register_craftitem("magic_materials:magic_mushroom", {
-    description = "Magic Mushroom",
+    description = S"Magic Mushroom",
     inventory_image = "magic_materials_magic_mushroom.png",
     light_source = 5,
 })
 
 minetest.register_craftitem("magic_materials:fire_rune", {
-    description = "Fire Rune",
+    description = S"Fire Rune",
     inventory_image = "magic_materials_fire_rune.png",
     light_source = 7,
 })
 
 minetest.register_craftitem("magic_materials:ice_rune", {
-    description = "Ice Rune",
+    description = S"Ice Rune",
     inventory_image = "magic_materials_ice_rune.png",
     light_source = 6,
 })
 
 minetest.register_craftitem("magic_materials:storm_rune", {
-    description = "Storm Rune",
+    description = S"Storm Rune",
     inventory_image = "magic_materials_storm_rune.png",
     light_source = 5,
 })
 
 minetest.register_craftitem("magic_materials:void_rune", {
-    description = "Void Rune",
+    description = S"Void Rune",
     inventory_image = "magic_materials_void_rune.png",
     light_source = 3,
 })
 
 minetest.register_craftitem("magic_materials:light_rune", {
-    description = "Light Rune",
+    description = S"Light Rune",
     inventory_image = "magic_materials_light_rune.png",
     light_source = 9,
 })
 
 minetest.register_craftitem("magic_materials:energy_rune", {
-    description = "Energy Rune",
+    description = S"Energy Rune",
     inventory_image = "magic_materials_energy_rune.png",
     light_source = 8,
 })
 
 minetest.register_craftitem("magic_materials:earth_rune", {
-    description = "Earth Rune",
+    description = S"Earth Rune",
     inventory_image = "magic_materials_earth_rune.png",
     light_source = 4,
 })

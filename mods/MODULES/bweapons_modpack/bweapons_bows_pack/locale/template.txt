@@ -1,0 +1,9 @@
+# textdomain: bweapons_bows_pack
+
+#weapons.lua
+Wooden Bow=
+Crossbow=
+
+#ammo.lua
+Arrow=
+Bolt=

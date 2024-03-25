@@ -1,5 +1,4 @@
-
-local S = mobs.intllib
+local S = minetest.get_translator(minetest.get_current_modname())
 
 -- Bee by KrupnoPavel (.b3d model by sirrobzeroone)
 

@@ -2,7 +2,7 @@
 -- Iron Pickaxe
 
 minetest.register_tool("pigiron:pick_iron", {
-	description = "Iron Pickaxe",
+	description = "железная кирка",
 	inventory_image = "pigiron_iron_pick.png",
 	tool_capabilities = {
 		full_punch_interval = 1.2,
@@ -31,7 +31,7 @@ minetest.register_craft({
 -- Iron Shovel
 
 minetest.register_tool("pigiron:shovel_iron", {
-	description = "Iron Shovel",
+	description = "железная лопата",
 	inventory_image = "pigiron_iron_shovel.png",
 	wield_image = "pigiron_iron_shovel.png^[transformR90",
 	tool_capabilities = {
@@ -61,7 +61,7 @@ minetest.register_craft({
 -- Iron Axe
 
 minetest.register_tool("pigiron:axe_iron", {
-	description = "Iron Axe",
+	description = "железный топор",
 	inventory_image = "pigiron_iron_axe.png",
 	tool_capabilities = {
 		full_punch_interval = 1.1,
@@ -90,7 +90,7 @@ minetest.register_craft({
 -- Iron Sword
 
 minetest.register_tool("pigiron:sword_iron", {
-	description = "Iron Sword",
+	description = "железный меч",
 	inventory_image = "pigiron_iron_sword.png",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
@@ -121,18 +121,18 @@ minetest.register_craft({
 if minetest.get_modpath("farming") then
 
 	farming.register_hoe(":farming:hoe_iron", {
-		description = "Iron Hoe",
+		description = "железная мотыга",
 		inventory_image = "pigiron_iron_hoe.png",
 		max_uses = 150,
 		material = "pigiron:iron_ingot"
 	})
 
-	-- mesecraft_toolranks support if farming redo active
+	-- toolranks support if farming redo active
 	if farming and farming.mod
-	and minetest.get_modpath("mesecraft_toolranks") then
+	and minetest.get_modpath("toolranks") then
 		minetest.override_item("farming:hoe_iron", {
 			original_description = "Iron Hoe",
-			description = mesecraft_toolranks.create_description("Iron Hoe")})
+			description = toolranks.create_description("железная мотыга")})
 	end
 end
 
@@ -251,21 +251,21 @@ minetest.override_item("default:sword_bronze", {
 	},
 })
 
--- Add [mesecraft_toolranks] mod support if found
-if minetest.get_modpath("mesecraft_toolranks") then
+-- Add [toolranks] mod support if found
+if minetest.get_modpath("toolranks") then
 
 	-- Helper function
 	local function add_tool(name, desc, afteruse)
 
 		minetest.override_item(name, {
 			original_description = desc,
-			description = mesecraft_toolranks.create_description(desc, 0, 1),
-			after_use = afteruse and mesecraft_toolranks.new_afteruse
+			description = toolranks.create_description(desc, 0, 1),
+			after_use = afteruse and toolranks.new_afteruse
 		})
 	end
 
-	add_tool("pigiron:pick_iron", "Iron Pickaxe", true)
-	add_tool("pigiron:axe_iron", "Iron Axe", true)
-	add_tool("pigiron:shovel_iron", "Iron Shovel", true)
-	add_tool("pigiron:sword_iron", "Iron Sword", true)
+	add_tool("pigiron:pick_iron", "железная кирка", true)
+	add_tool("pigiron:axe_iron", "железный топор", true)
+	add_tool("pigiron:shovel_iron", "железная лопата", true)
+	add_tool("pigiron:sword_iron", "железный меч", true)
 end

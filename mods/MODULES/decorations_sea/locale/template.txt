@@ -1,0 +1,17 @@
+# textdomain: decorations_sea
+Sand With =
+Node is protected=
+Blue=
+Orange=
+Pink=
+Violet=
+Red=
+Yellow=
+Red=
+Green=
+ Coral=
+Coral=
+Seagrass=
+Seashell=
+Starfish=
+Sea Pickle=

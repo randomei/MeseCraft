@@ -1,0 +1,7 @@
+# textdomain: bweapons_magic_pack
+Tome of Fireball=
+Tome of Ice Shard=
+Tome of Electrosphere=
+Staff of Energy=
+Staff of Light=
+Staff of Void=

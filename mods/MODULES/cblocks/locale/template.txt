@@ -1,0 +1,21 @@
+# textdomain: cblocks
+Black=
+Blue=
+Brown=
+Cyan=
+Dark Green=
+Dark Grey=
+Green=
+Grey=
+Magenta=
+Orange=
+Pink=
+Red=
+Violet=
+White=
+Yellow=
+%s Stair=
+%s Slab=
+ Wooden Planks=
+ Stone Brick=
+ Glass=

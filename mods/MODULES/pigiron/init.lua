@@ -2,7 +2,7 @@
 -- Pig Iron Ingot
 
 minetest.register_craftitem("pigiron:iron_ingot", {
-	description = "Iron Ingot",
+	description = "железный слиток",
 	inventory_image = "pigiron_iron_ingot.png",
 })
 
@@ -24,7 +24,7 @@ minetest.register_craft({
 -- Pig Iron Block
 
 minetest.register_node("pigiron:iron_block", {
-	description = "Iron Block",
+	description = "железный блок",
 	tiles = {"pigiron_iron_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 1},
@@ -49,7 +49,7 @@ minetest.register_craft({
 -- Rusted Pig Iron Block
 
 minetest.register_node("pigiron:rusted_iron_block", {
-	description = "Rusted Iron Block",
+	description = "ржавый железный блок",
 	tiles = {"pigiron_rusted_iron_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 1},
@@ -60,11 +60,11 @@ minetest.register_craft({
 	output = "pigiron:rusted_iron_block 8",
 	recipe = {
 		{"pigiron:iron_block", "pigiron:iron_block", "pigiron:iron_block"},
-		{"pigiron:iron_block", "mesecraft_bucket:bucket_water", "pigiron:iron_block"},
+		{"pigiron:iron_block", "bucket:bucket_water", "pigiron:iron_block"},
 		{"pigiron:iron_block", "pigiron:iron_block", "pigiron:iron_block"},
 	},
 	replacements = {
-		{"mesecraft_bucket:bucket_water", "mesecraft_bucket:bucket_empty"}
+		{"bucket:bucket_water", "bucket:bucket_empty"}
 	}
 })
 
@@ -83,7 +83,7 @@ if not minetest.get_modpath("ethereal") then
 	-- Charcoal
 
 	minetest.register_craftitem("pigiron:charcoal_lump", {
-		description = "Lump of Charcoal",
+		description = "кусок древесного угля",
 		inventory_image = "pigiron_charcoal_lump.png",
 	})
 
@@ -124,7 +124,7 @@ end -- END If Ethereal
 -- Iron/Charcoal Mix
 
 minetest.register_craftitem("pigiron:iron_charcoal_mix", {
-	description = "Iron and Charcoal Mix",
+	description = "смесь железа и древесного угля",
 	inventory_image = "pigiron_iron_ingot.png^pigiron_charcoal_lump.png",
 })
 
@@ -207,15 +207,15 @@ if minetest.get_modpath("stairs") then
 	stairs.register_stair_and_slab("iron_block", "pigiron:iron_block",
 		{cracky = 1},
 		{"pigiron_iron_block.png"},
-		"Iron Block Stair",
-		"Iron Block Slab",
+		"железные ступени",
+		"железная плита",
 		default.node_sound_metal_defaults())
 
 	stairs.register_stair_and_slab("rusted_iron_block", "pigiron:rusted_iron_block",
 		{cracky = 1},
 		{"pigiron_rusted_iron_block.png"},
-		"Rusted Iron Block Stair",
-		"Rusted Iron Block Slab",
+		"ржавые железные ступени",
+		"ржавая железная плита",
 		default.node_sound_metal_defaults())
 
 	-- Cook Rusted Iron Stairs and Slabs Back Into Normal Iron Stairs

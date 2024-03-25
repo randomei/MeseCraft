@@ -1,0 +1,9 @@
+# textdomain: mesecons_pistons
+
+### init.lua ###
+Piston=Поршень
+Activated Piston Base=Акивированное основание поршня
+Piston Pusher=Пушер поршня
+Sticky Piston=Липкий поршень
+Activated Sticky Piston Base=Активированное основание липкого поршня
+Sticky Piston Pusher=Пушер липкого поршня

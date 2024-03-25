@@ -1,0 +1,75 @@
+# textdomain: df_underworld_items
+
+
+### ancient_lanterns.lua ###
+
+Ancient Lantern=древний фонарь
+
+### crystals_amethyst.lua ###
+
+Glowing Amethyst Block=светящийся аметистовый блок
+
+### doc.lua ###
+
+Bright glowing stones of unknown origin found lodged in the crevices of the underworld's ceiling.=
+
+Glowing purple crystals that grow through holes in the foundation of the world.=
+
+In fact, Slade is impervious to conventional mining entirely.=
+
+Slade is extremely hard to work with so it has little use.=
+
+The liquid found in the deepest pits in the underworld is highly dangerous and damaging.=
+
+The only use for this material is that it destroys whatever is thrown into it. It cannot otherwise be manipulated.=
+
+The very foundation of the world, Slade is a mysterious ultra-dense substance.=
+
+These crystals have no known use.=
+
+These stones are highly volatile and should not be disturbed.=
+
+This block of Slade, carved by an unknown hand, is engraved with mysterious symbols. Most of the engraving's meaning is lost to the mists of time but one frament in the oldest known language can be translated: "This place is not a place of honor."=
+
+This shard of a spent slade breacher doesn't appear to have been intended as a portable tool, but it can be used as one.=
+
+Use this on a target to unleash the energies used to dig through the foundations of the world.=
+
+
+### glow_stone.lua ###
+
+Lightseam=светошов
+
+### glowing_pit_plasma.lua ###
+
+Glowing Pit Plasma=сияющая плазма ямы
+
+### hunter_statue.lua ###
+
+Guardian Statue=статуя защитника
+
+### puzzle_chest.lua ###
+
+Puzzle Chest=пазл-сундук
+
+### puzzle_seal.lua ###
+
+Active Slade Breacher=активный прорыватель слейда
+Breach in the Slade=бреш в слейде
+Inscribed Slade Block=блок слейда с начертаниями
+Slade Capstone=замковый камень из слейда
+Slade Puzzle Seal=пазл-печать слейда
+Turn=ход
+
+### slade.lua ###
+
+Slade=слейд
+Slade Block=блок слейда
+Slade Brick=кирпич из слейда
+Slade Sand=песок слейда
+Slade Seal=печать слейда
+Slade Wall=стена из слейда
+
+### slade_drill.lua ###
+
+Slade Drill=бур слейда

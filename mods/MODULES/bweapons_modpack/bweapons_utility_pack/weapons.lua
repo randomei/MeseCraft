@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 bweapons.register_weapon({
     name = "bweapons_utility_pack:torch_bow",
-    description = "Torch Bow",
+    description = S"Torch Bow",
     texture = "bweapons_utility_pack_torch_bow.png",
     has_durability = true,
     uses = 128,

@@ -80,8 +80,8 @@ df_dependencies.node_name_dirt_wet = select_required({"farming:soil_wet", "mcl_f
 --df_dependencies.node_name_mortar_pestle = select_optional({"farming:mortar_pestle"}) -- TODO where did this go?
 df_dependencies.node_name_string = select_required({"farming:string", "mcl_mobitems:string"})
 
-df_dependencies.node_name_bucket_empty = select_required({"mesecraft_bucket:bucket_empty", "mcl_buckets:bucket_empty"})
-df_dependencies.node_name_bucket_lava = select_required({"mesecraft_bucket:bucket_lava", "mcl_buckets:bucket_lava"})
+df_dependencies.node_name_bucket_empty = select_required({"bucket:bucket_empty", "mcl_buckets:bucket_empty"})
+df_dependencies.node_name_bucket_lava = select_required({"bucket:bucket_lava", "mcl_buckets:bucket_lava"})
 
 -- from "wool"
 

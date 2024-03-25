@@ -1,0 +1,5 @@
+# textdomain: decoblocks
+Bamboo Fence=
+Scarecrow=
+Spikes=
+Paper Lantern=

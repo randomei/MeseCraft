@@ -1,11 +1,11 @@
 
-local S = mobs.intllib
+local S = minetest.get_translator(minetest.get_current_modname())
 
 -- Npc by TenPlus1
 
 mobs.npc_drops = {
 	"default:pick_steel", "mesecraft_mobs:meat_cooked", "default:sword_steel",
-	"default:shovel_steel", "farming:bread", "mesecraft_bucket:bucket_water"
+	"default:shovel_steel", "farming:bread", "bucket:bucket_water"
 }
 
 mobs:register_mob("mobs_npc:npc", {

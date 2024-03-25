@@ -1,11 +1,11 @@
 
-local S = mobs.intllib
+local S = minetest.get_translator(minetest.get_current_modname())
 
 -- Igor by TenPlus1
 
 mobs.igor_drops = {
 	"vessels:glass_bottle", "mesecraft_mobs:meat", "default:sword_steel",
-	"farming:bread", "mesecraft_bucket:bucket_water"
+	"farming:bread", "bucket:bucket_water"
 }
 
 mobs:register_mob("mobs_npc:igor", {

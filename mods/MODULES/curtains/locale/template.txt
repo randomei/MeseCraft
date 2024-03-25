@@ -1,0 +1,18 @@
+# textdomain: curtains
+Wooden Curtain Rod=
+Black=
+Blue=
+Brown=
+Cyan=
+Dark Green=
+Dark Grey=
+Green=
+Grey=
+Magenta=
+Orange=
+Pink=
+Red=
+Violet=
+White=
+Yellow=
+ Curtain=

@@ -3,8 +3,7 @@ bonemeal = {}
 
 -- Load support for intllib.
 local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP .. "/intllib.lua")
-
+local S = minetest.get_translator(minetest.get_current_modname())
 
 -- creative check
 local creative_mode_cache = minetest.settings:get_bool("creative_mode")
@@ -70,12 +69,12 @@ if minetest.registered_nodes["flowers:tulip_black"] then
 	flowers[#flowers + 1] = "flowers:chrysanthemum_green"
 end
 
--- add additional mesecraft_baked_clay flowers if enabled
-if minetest.get_modpath("mesecraft_baked_clay") then
-	flowers[#flowers + 1] = "mesecraft_baked_clay:delphinium"
-	flowers[#flowers + 1] = "mesecraft_baked_clay:thistle"
-	flowers[#flowers + 1] = "mesecraft_baked_clay:lazarus"
-	flowers[#flowers + 1] = "mesecraft_baked_clay:mannagrass"
+-- add additional bakedclay flowers if enabled
+if minetest.get_modpath("bakedclay") then
+	flowers[#flowers + 1] = "bakedclay:delphinium"
+	flowers[#flowers + 1] = "bakedclay:thistle"
+	flowers[#flowers + 1] = "bakedclay:lazarus"
+	flowers[#flowers + 1] = "bakedclay:mannagrass"
 	flowers[#flowers + 1] = ""
 end
 
@@ -567,11 +566,11 @@ minetest.register_craft({
 	recipe = {
 --MCMOB BONE
 		{"mesecraft_mobs:bone", "mesecraft_mobs:bone", "mesecraft_mobs:bone"},
-		{"mesecraft_bucket:bucket_water", "mesecraft_bucket:bucket_water", "mesecraft_bucket:bucket_water"},
-		{"mesecraft_bucket:bucket_water", "default:torch", "mesecraft_bucket:bucket_water"},
+		{"bucket:bucket_water", "bucket:bucket_water", "bucket:bucket_water"},
+		{"bucket:bucket_water", "default:torch", "bucket:bucket_water"},
 	},
 	replacements = {
-		{"mesecraft_bucket:bucket_water", "mesecraft_bucket:bucket_empty 5"},
+		{"bucket:bucket_water", "bucket:bucket_empty 5"},
 	},
 })
 

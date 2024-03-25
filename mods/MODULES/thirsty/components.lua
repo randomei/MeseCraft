@@ -65,14 +65,14 @@ Wear corresponds to hydro level as follows:
 if minetest.get_modpath("default") and thirsty.config.register_canteens then
 
     minetest.register_tool('thirsty:wood_canteen', {
-        description = 'Wooden Canteen',
+        description = 'Деревянная фляга',
         inventory_image = "wood_canteen.png",
         liquids_pointable = true,
         stack_max = 1,
         on_use = thirsty.on_use(nil),
     })
     minetest.register_tool('thirsty:bronze_canteen', {
-        description = 'Bronze Canteen',
+        description = 'Бронзовая фляга',
         inventory_image = "bronze_canteen.png",
         liquids_pointable = true,
         stack_max = 1,
@@ -80,7 +80,7 @@ if minetest.get_modpath("default") and thirsty.config.register_canteens then
     })
 
     minetest.register_tool('thirsty:steel_canteen', {
-        description = 'Steel Canteen',
+        description = 'Стальная фляга',
         inventory_image = "steel_canteen.png",
         liquids_pointable = true,
         stack_max = 1,
@@ -88,28 +88,28 @@ if minetest.get_modpath("default") and thirsty.config.register_canteens then
     })
 
     minetest.register_tool('thirsty:silver_canteen', {
-        description = 'Silver Canteen',
+        description = 'Серебрянная фляга',
         inventory_image = "silver_canteen.png",
         liquids_pointable = true,
         stack_max = 1,
         on_use = thirsty.on_use(nil),
     })
     minetest.register_tool('thirsty:gold_canteen', {
-        description = 'Gold Canteen',
+        description = 'Золотая фляга',
         inventory_image = "gold_canteen.png",
         liquids_pointable = true,
         stack_max = 1,
         on_use = thirsty.on_use(nil),
     })
     minetest.register_tool('thirsty:diamond_canteen', {
-        description = 'Diamond Canteen',
+        description = 'Алмазная фляга',
         inventory_image = "diamond_canteen.png",
         liquids_pointable = true,
         stack_max = 1,
         on_use = thirsty.on_use(nil),
     })
     minetest.register_tool('thirsty:mithril_canteen', {
-        description = 'Mithril Canteen',
+        description = 'Мифриловая фляга',
         inventory_image = "mithril_canteen.png",
         liquids_pointable = true,
         stack_max = 1,
@@ -181,10 +181,10 @@ Tier 3
 
 ]]
 
-if minetest.get_modpath("default") and minetest.get_modpath("mesecraft_bucket") and thirsty.config.register_drinking_fountain then
+if minetest.get_modpath("default") and minetest.get_modpath("bucket") and thirsty.config.register_drinking_fountain then
 
     minetest.register_node('thirsty:drinking_fountain', {
-        description = 'Drinking fountain',
+        description = 'Питьевой фонтан',
         drawtype = 'nodebox',
         tiles = {
             -- top, bottom, right, left, front, back
@@ -220,7 +220,7 @@ if minetest.get_modpath("default") and minetest.get_modpath("mesecraft_bucket") 
     minetest.register_craft({
         output = "thirsty:drinking_fountain",
         recipe = {
-            { "default:stone", "mesecraft_bucket:bucket_water", "default:stone"},
+            { "default:stone", "bucket:bucket_water", "default:stone"},
             { "", "default:stone", ""},
             { "", "default:stone", ""}
         }
@@ -234,10 +234,10 @@ Tier 4+: the water fountains, plus extenders
 
 ]]
 
-if minetest.get_modpath("default") and minetest.get_modpath("mesecraft_bucket") and thirsty.config.register_fountains then
+if minetest.get_modpath("default") and minetest.get_modpath("bucket") and thirsty.config.register_fountains then
 
     minetest.register_node('thirsty:water_fountain', {
-        description = 'Water fountain',
+        description = 'Фонтан воды',
         tiles = {
             -- top, bottom, right, left, front, back
             'thirsty_waterfountain_top.png',
@@ -268,7 +268,7 @@ if minetest.get_modpath("default") and minetest.get_modpath("mesecraft_bucket") 
     minetest.register_craft({
         output = "thirsty:water_fountain",
         recipe = {
-            { "default:copper_ingot", "mesecraft_bucket:bucket_water", "default:copper_ingot"},
+            { "default:copper_ingot", "bucket:bucket_water", "default:copper_ingot"},
             { "", "default:copper_ingot", ""},
             { "default:copper_ingot", "default:mese_crystal", "default:copper_ingot"}
         }
@@ -276,7 +276,7 @@ if minetest.get_modpath("default") and minetest.get_modpath("mesecraft_bucket") 
     minetest.register_craft({
         output = "thirsty:water_extender",
         recipe = {
-            { "", "mesecraft_bucket:bucket_water", ""},
+            { "", "bucket:bucket_water", ""},
             { "", "default:copper_ingot", ""},
             { "default:copper_ingot", "default:mese_crystal", "default:copper_ingot"}
         }
@@ -301,30 +301,30 @@ they are searched for in player's inventories
 
 ]]
 
-if minetest.get_modpath("default") and minetest.get_modpath("mesecraft_bucket") and thirsty.config.register_amulets then
+if minetest.get_modpath("default") and minetest.get_modpath("bucket") and thirsty.config.register_amulets then
 
     minetest.register_craftitem('thirsty:injector', {
-        description = 'Water injector',
+        description = 'Шприц с водой',
         inventory_image = 'thirsty_injector.png',
     })
     minetest.register_craft({
         output = "thirsty:injector",
         recipe = {
             { "default:diamond", "default:mese_crystal", "default:diamond"},
-            { "default:mese_crystal", "mesecraft_bucket:bucket_water", "default:mese_crystal"},
+            { "default:mese_crystal", "bucket:bucket_water", "default:mese_crystal"},
             { "default:diamond", "default:mese_crystal", "default:diamond"}
         }
     })
 
     minetest.register_craftitem('thirsty:extractor', {
-        description = 'Water extractor',
+        description = 'Экстрактор воды',
         inventory_image = 'thirsty_extractor.png',
     })
     minetest.register_craft({
         output = "thirsty:extractor",
         recipe = {
             { "default:mese_crystal", "default:diamond", "default:mese_crystal"},
-            { "default:diamond", "mesecraft_bucket:bucket_water", "default:diamond"},
+            { "default:diamond", "bucket:bucket_water", "default:diamond"},
             { "default:mese_crystal", "default:diamond", "default:mese_crystal"}
         }
     })

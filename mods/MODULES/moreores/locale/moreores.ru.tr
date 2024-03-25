@@ -1,0 +1,21 @@
+# textdomain: moreores
+
+# Translation by Randomei
+
+@1 Ore=руда @1
+@1 Lump=кусок @1
+@1 Ingot=слиток @1
+@1 Block=блок @1
+@1 Pickaxe=кирка из @1
+@1 Shovel= лопата из @1
+@1 Axe=топор из @1
+@1 Sword=меч из @1
+@1 Hoe=мотыга из @1
+
+Copper=меди
+Tin=олова
+Bronze=бронзы
+Silver=серебра
+Gold=золота
+Mithril=мифрила
+Copper Rail=медные рельсы

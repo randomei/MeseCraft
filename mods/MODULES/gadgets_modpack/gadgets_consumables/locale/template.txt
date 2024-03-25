@@ -1,0 +1,16 @@
+# textdomain: gadgets_consumables
+Speed=
+Jump=
+Gravity=
+Water Breathing=
+Fire Shield=
+Health Regeneration=
+Mana Regeneration=
+Stamina Regeneration=
+Weak Potion Of =
+Strong Potion Of =
+Long-Lasting Potion Of =
+Potion Of =
+Potion of Dispelling=
+Potion of Teleport=
+Water Bottle=

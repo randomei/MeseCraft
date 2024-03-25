@@ -1,0 +1,20 @@
+# textdomain: extra_doors
+Steel Rod=
+Wooden Colonial Door=
+Wooden Single-Lite Door=
+Wooden Double-Lite Door=
+Japanese Door=
+French Door=
+Cottage Interior Door=
+Cottage Exterior Door=
+Barn Interior Door=
+Barn Exterior Door=
+Castle Interior Door=
+Castle Exterior Door=
+Mansion Interior Door=
+Mansion Exterior Door=
+Dungeon Interior Door=
+Dungeon Exterior Door=
+Steel Colonial Door=
+Steel Single-Lite Door=
+Steel Double-Lite Door=

@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 gadgets.register_gadget({
     name = "gadgets_consumables:water_bottle",
-    description = "Water Bottle",
+    description = S"Water Bottle",
     texture = "gadgets_consumables_potion_water.png",
     consumable = true,
     stack_max = 4,
@@ -14,7 +16,7 @@ minetest.register_craft({
     recipe = {
 		{"vessels:glass_bottle", "vessels:glass_bottle", ""},
 		{"vessels:glass_bottle", "vessels:glass_bottle", ""},
-		{"", "mesecraft_bucket:bucket_water", ""}
+		{"", "bucket:bucket_water", ""}
 	},
-	replacements = {{ "mesecraft_bucket:bucket_water", "mesecraft_bucket:bucket_empty"}},
+	replacements = {{ "bucket:bucket_water", "bucket:bucket_empty"}},
 })

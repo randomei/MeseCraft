@@ -1,0 +1,11 @@
+# textdomain: gadgets_magic
+Magic Lantern=
+Magic Bridge Block=
+Tome Of Speed=
+Tome Of Jump=
+Tome Of Gravity=
+Tome Of Blink=
+Tome Of Magical Bridge=
+Tome Of Magical Light=
+Druid's Staff=
+Staff Of Earth=

@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 local effect_potions = {
     {
-        desc = "Speed",
+        desc = S"Speed",
         name = "speed",
         recipe = {
             {
@@ -11,7 +13,7 @@ local effect_potions = {
         },
     },
     {
-        desc = "Jump",
+        desc = S"Jump",
         name = "jump",
         recipe = {
             {
@@ -22,7 +24,7 @@ local effect_potions = {
         },
     },
     {
-        desc = "Gravity",
+        desc = S"Gravity",
         name = "gravity",
         recipe = {
             {
@@ -36,7 +38,7 @@ local effect_potions = {
 
 local regen_potions = {
     {
-        desc = "Water Breathing",
+        desc = S"Water Breathing",
         name = "water_breath",
         recipe = {
             {
@@ -47,19 +49,19 @@ local regen_potions = {
         },
     },
     {
-        desc = "Fire Shield",
+        desc = S"Fire Shield",
         name = "fire_shield",
         recipe = {
             {
-                {"default:obsidian_shard", "mesecraft_bucket:bucket_lava", "default:mese_crystal_fragment"},
+                {"default:obsidian_shard", "bucket:bucket_lava", "default:mese_crystal_fragment"},
                 {"", "magic_materials:magic_root", ""},
                 {"", "gadgets_consumables:water_bottle", ""},
             }
         },
-        replacements = {{"mesecraft_bucket:bucket_lava", "mesecraft_bucket:bucket_empty"}},
+        replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}},
     },
     {
-        desc = "Health Regeneration",
+        desc = S"Health Regeneration",
         name = "health_regen",
         recipe = {
             {
@@ -74,7 +76,7 @@ local regen_potions = {
 if minetest.get_modpath("mana") then
     table.insert(regen_potions,
         {
-            desc = "Mana Regeneration",
+            desc = S"Mana Regeneration",
             name = "mana_regen",
             recipe = {
                 {
@@ -89,7 +91,7 @@ end
 if minetest.get_modpath("sprint_lite") then
     table.insert(regen_potions,
         {
-            desc = "Stamina Regeneration",
+            desc = S"Stamina Regeneration",
             name = "stamina_regen",
             recipe = {
                 {
@@ -104,7 +106,7 @@ end
 for _,v in pairs(effect_potions) do
     gadgets.register_gadget({
         name = "gadgets_consumables:potion_" .. v.name .. "_01",
-        description = "Weak Potion Of " .. v.desc,
+        description = S"Weak Potion Of " .. v.desc,
         texture = "gadgets_consumables_potion_" .. v.name .. ".png",
         consumable = true,
         stack_max = 4,
@@ -120,7 +122,7 @@ for _,v in pairs(effect_potions) do
 
     gadgets.register_gadget({
         name = "gadgets_consumables:potion_" .. v.name .. "_02",
-        description = "Strong Potion Of " .. v.desc,
+        description = S"Strong Potion Of " .. v.desc,
         texture = "gadgets_consumables_potion_" .. v.name .. ".png",
         consumable = true,
         stack_max = 4,
@@ -138,7 +140,7 @@ for _,v in pairs(effect_potions) do
 
     gadgets.register_gadget({
         name = "gadgets_consumables:potion_" .. v.name .. "_03",
-        description = "Long-Lasting Potion Of " .. v.desc,
+        description = S"Long-Lasting Potion Of " .. v.desc,
         texture = "gadgets_consumables_potion_" .. v.name .. ".png",
         consumable = true,
         stack_max = 4,
@@ -158,7 +160,7 @@ end
 for _,v in pairs(regen_potions) do
     gadgets.register_gadget({
         name = "gadgets_consumables:potion_" .. v.name .. "_01",
-        description = "Potion Of " .. v.desc,
+        description = S"Potion Of " .. v.desc,
         texture = "gadgets_consumables_potion_" .. v.name .. ".png",
         consumable = true,
         stack_max = 4,
@@ -173,7 +175,7 @@ for _,v in pairs(regen_potions) do
 
     gadgets.register_gadget({
         name = "gadgets_consumables:potion_" .. v.name .. "_02",
-        description = "Long-Lasting Potion Of " .. v.desc,
+        description = S"Long-Lasting Potion Of " .. v.desc,
         texture = "gadgets_consumables_potion_" .. v.name .. ".png",
         consumable = true,
         stack_max = 4,
@@ -191,7 +193,7 @@ end
 
 gadgets.register_gadget({
     name = "gadgets_consumables:potion_dispel",
-    description = "Potion of Dispelling",
+    description = S"Potion of Dispelling",
     texture = "gadgets_consumables_potion_dispel.png",
     consumable = true,
     stack_max = 4,
@@ -220,7 +222,7 @@ end
 
 gadgets.register_gadget({
     name = "gadgets_consumables:potion_teleport",
-    description = "Potion of Teleport",
+    description = S"Potion of Teleport",
     texture = "gadgets_consumables_potion_teleport.png",
     consumable = true,
     stack_max = 4,

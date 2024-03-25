@@ -1,0 +1,18 @@
+# textdomain: castle
+
+#pillars.lua
+Stonebrick=
+Stone=
+Sandstone=
+Desert Stone=
+Obsidian=
+Dungeon Stone=
+Mushroom Trunk=
+Ice Brick=
+ Pillar Base=
+ Pillar Top=
+ Pillar Middle=
+
+#town_item.lua
+Dungeon Stone=
+Crate=

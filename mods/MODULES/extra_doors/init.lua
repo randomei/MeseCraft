@@ -8,8 +8,10 @@
 -- One of the most essential but often overlooked elements of building design is door selection.
 -- Doors set the tone and character, and having the wrong style of door can make or break a build.
 
+local S = minetest.get_translator(minetest.get_current_modname())
+
 minetest.register_craftitem( ":default:steel_rod", {
-        description = "Steel Rod",
+        description = S"Steel Rod",
         inventory_image = "default_steel_rod.png",
 } )
 
@@ -23,7 +25,7 @@ minetest.register_craft( {
 doors.register( "door_woodpanel1", {
 	-- Colonial Style (6 panel)
 	tiles = { { name = "doors_door_woodpanel1.png", backface_culling = true } },
-	description = "Wooden Colonial Door",
+	description = S"Wooden Colonial Door",
 	inventory_image = "doors_item_woodpanel1.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -36,7 +38,7 @@ doors.register( "door_woodpanel1", {
 doors.register( "door_woodglass1", {
 	-- Cambridge Style (2 panel)
 	tiles = { { name = "doors_door_woodglass1.png", backface_culling = true } },
-	description = "Wooden Single-Lite Door",
+	description = S"Wooden Single-Lite Door",
 	inventory_image = "doors_item_woodglass1.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -49,7 +51,7 @@ doors.register( "door_woodglass1", {
 doors.register( "door_woodglass2", {
 	-- Atherton Style (4 panel)
 	tiles = { { name = "doors_door_woodglass2.png", backface_culling = true } },
-	description = "Wooden Double-Lite Door",
+	description = S"Wooden Double-Lite Door",
 	inventory_image = "doors_item_woodglass2.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -61,7 +63,7 @@ doors.register( "door_woodglass2", {
 
 doors.register( "door_japanese", {
 	tiles = { { name = "doors_door_japanese.png", backface_culling = true } },
-	description = "Japanese Door",
+	description = S"Japanese Door",
 	inventory_image = "doors_item_japanese.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -73,7 +75,7 @@ doors.register( "door_japanese", {
 
 doors.register( "door_french", {
 	tiles = { { name = "doors_door_french.png", backface_culling = true } },
-	description = "French Door",
+	description = S"French Door",
 	inventory_image = "doors_item_french.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -85,7 +87,7 @@ doors.register( "door_french", {
 
 doors.register( "door_cottage1", {
 	tiles = { { name = "doors_door_cottage1.png", backface_culling = true } },
-	description = "Cottage Interior Door",
+	description = S"Cottage Interior Door",
 	inventory_image = "doors_item_cottage1.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -97,7 +99,7 @@ doors.register( "door_cottage1", {
 
 doors.register( "door_cottage2", {
 	tiles = { { name = "doors_door_cottage2.png", backface_culling = true } },
-	description = "Cottage Exterior Door",
+	description = S"Cottage Exterior Door",
 	inventory_image = "doors_item_cottage2.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -109,7 +111,7 @@ doors.register( "door_cottage2", {
 
 doors.register( "door_barn1", {
 	tiles = { { name = "doors_door_barn1.png", backface_culling = true } },
-	description = "Barn Interior Door",
+	description = S"Barn Interior Door",
 	inventory_image = "doors_item_barn1.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -121,7 +123,7 @@ doors.register( "door_barn1", {
 
 doors.register( "door_barn2", {
 	tiles = { { name = "doors_door_barn2.png", backface_culling = true } },
-	description = "Barn Exterior Door",
+	description = S"Barn Exterior Door",
 	inventory_image = "doors_item_barn2.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -133,7 +135,7 @@ doors.register( "door_barn2", {
 
 doors.register( "door_castle1", {
 	tiles = { { name = "doors_door_castle1.png", backface_culling = true } },
-	description = "Castle Interior Door",
+	description = S"Castle Interior Door",
 	inventory_image = "doors_item_castle1.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -145,7 +147,7 @@ doors.register( "door_castle1", {
 
 doors.register( "door_castle2", {
 	tiles = { { name = "doors_door_castle2.png", backface_culling = true } },
-	description = "Castle Exterior Door",
+	description = S"Castle Exterior Door",
 	inventory_image = "doors_item_castle2.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -157,7 +159,7 @@ doors.register( "door_castle2", {
 
 doors.register( "door_mansion1", {
 	tiles = { { name = "doors_door_mansion1.png", backface_culling = true } },
-	description = "Mansion Interior Door",
+	description = S"Mansion Interior Door",
 	inventory_image = "doors_item_mansion1.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -169,7 +171,7 @@ doors.register( "door_mansion1", {
 
 doors.register( "door_mansion2", {
 	tiles = { { name = "doors_door_mansion2.png", backface_culling = true } },
-	description = "Mansion Exterior Door ",
+	description = S"Mansion Exterior Door",
 	inventory_image = "doors_item_mansion2.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 	recipe = {
@@ -181,7 +183,7 @@ doors.register( "door_mansion2", {
 
 doors.register("door_dungeon1", {
 	tiles = { { name = "doors_door_dungeon1.png", backface_culling = true } },
-	description = "Dungeon Interior Door",
+	description = S"Dungeon Interior Door",
 	inventory_image = "doors_item_dungeon1.png",
 	protected = true,
 	groups = { cracky = 1, level = 2 },
@@ -197,7 +199,7 @@ doors.register("door_dungeon1", {
 
 doors.register( "door_dungeon2", {
 	tiles = { { name = "doors_door_dungeon2.png", backface_culling = true } },
-	description = "Dungeon Exterior Door",
+	description = S"Dungeon Exterior Door",
 	inventory_image = "doors_item_dungeon2.png",
 	protected = true,
 	groups = { cracky = 1, level = 2 },
@@ -213,7 +215,7 @@ doors.register( "door_dungeon2", {
 
 doors.register( "door_steelpanel1", {
 	tiles = { { name = "doors_door_steelpanel1.png", backface_culling = true } },
-	description = "Steel Colonial Door",
+	description = S"Steel Colonial Door",
 	inventory_image = "doors_item_steelpanel1.png",
 	protected = true,
 	groups = { cracky = 1, level = 2 },
@@ -229,7 +231,7 @@ doors.register( "door_steelpanel1", {
 
 doors.register( "door_steelglass1", {
 	tiles = { { name = "doors_door_steelglass1.png", backface_culling = true } },
-	description = "Steel Single-Lite Door",
+	description = S"Steel Single-Lite Door",
 	inventory_image = "doors_item_steelglass1.png",
 	protected = true,
 	groups = { cracky = 1, level = 2 },
@@ -245,7 +247,7 @@ doors.register( "door_steelglass1", {
 
 doors.register( "door_steelglass2", {
 	tiles = { { name = "doors_door_steelglass2.png", backface_culling = true } },
-	description = "Steel Double-Lite Door",
+	description = S"Steel Double-Lite Door",
 	inventory_image = "doors_item_steelglass2.png",
 	protected = true,
 	groups = { cracky = 1, level = 2 },

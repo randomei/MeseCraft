@@ -5,7 +5,7 @@ minetest.register_craft({
     output = 'drinks:juice_press',
     recipe = {
       {'default:stick', 'default:steel_ingot', 'default:stick'},
-      {'default:stick', 'mesecraft_bucket:bucket_empty', 'default:stick'},
+      {'default:stick', 'bucket:bucket_empty', 'default:stick'},
       {'stairs:slab_wood', 'stairs:slab_wood', 'vessels:drinking_glass'},
     }
   })

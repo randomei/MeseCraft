@@ -1,6 +1,6 @@
 
-local S = farming.intllib
-local tr = minetest.get_modpath("mesecraft_toolranks")
+local S = farming.translate
+local tr = minetest.get_modpath("toolranks")
 
 -- Hoe registration function
 
@@ -110,7 +110,7 @@ function farming.hoe_on_use(itemstack, user, pointed_thing, uses)
 	-- turn the node into soil, wear out item and play sound
 	minetest.set_node(pt.under, {name = ndef.soil.dry})
 
-	minetest.sound_play("default_dig_crumbly", {pos = pt.under, gain = 0.5})
+	minetest.sound_play("default_dig_crumbly", {pos = pt.under, gain = 0.5}, true)
 
 	local wdef = itemstack:get_definition()
 	local wear = 65535 / (uses - 1)
@@ -124,14 +124,13 @@ function farming.hoe_on_use(itemstack, user, pointed_thing, uses)
 	end
 
 	if tr then
-		itemstack = mesecraft_toolranks.new_afteruse(itemstack, user, under, {wear = wear})
+		itemstack = toolranks.new_afteruse(itemstack, user, under, {wear = wear})
 	else
 		itemstack:add_wear(wear)
 	end
 
 	if itemstack:get_count() == 0 and wdef.sound and wdef.sound.breaks then
-		minetest.sound_play(wdef.sound.breaks, {pos = pt.above,
-			gain = 0.5}, true)
+		minetest.sound_play(wdef.sound.breaks, {pos = pt.above, gain = 0.5}, true)
 	end
 
 	return itemstack
@@ -187,32 +186,32 @@ farming.register_hoe(":farming:hoe_diamond", {
 	groups = {not_in_creative_inventory = 1}
 })
 
--- mesecraft_toolranks support
+-- Toolranks support
 if tr then
 
-minetest.override_item("farming:hoe_wood", {
-	original_description = "Wood Hoe",
-	description = mesecraft_toolranks.create_description("Wood Hoe")})
+	minetest.override_item("farming:hoe_wood", {
+		original_description = S("Wood Hoe"),
+		description = toolranks.create_description(S("Wood Hoe"))})
 
-minetest.override_item("farming:hoe_stone", {
-	original_description = "Stone Hoe",
-	description = mesecraft_toolranks.create_description("Stone Hoe")})
+	minetest.override_item("farming:hoe_stone", {
+		original_description = S("Stone Hoe"),
+		description = toolranks.create_description(S("Stone Hoe"))})
 
-minetest.override_item("farming:hoe_steel", {
-	original_description = "Steel Hoe",
-	description = mesecraft_toolranks.create_description("Steel Hoe")})
+	minetest.override_item("farming:hoe_steel", {
+		original_description = S("Steel Hoe"),
+		description = toolranks.create_description(S("Steel Hoe"))})
 
-minetest.override_item("farming:hoe_bronze", {
-	original_description = "Bronze Hoe",
-	description = mesecraft_toolranks.create_description("Bronze Hoe")})
+	minetest.override_item("farming:hoe_bronze", {
+		original_description = S("Bronze Hoe"),
+		description = toolranks.create_description(S("Bronze Hoe"))})
 
-minetest.override_item("farming:hoe_mese", {
-	original_description = "Mese Hoe",
-	description = mesecraft_toolranks.create_description("Mese Hoe")})
+	minetest.override_item("farming:hoe_mese", {
+		original_description = S("Mese Hoe"),
+		description = toolranks.create_description(S("Mese Hoe"))})
 
-minetest.override_item("farming:hoe_diamond", {
-	original_description = "Diamond Hoe",
-	description = mesecraft_toolranks.create_description("Diamond Hoe")})
+	minetest.override_item("farming:hoe_diamond", {
+		original_description = S("Diamond Hoe"),
+		description = toolranks.create_description(S("Diamond Hoe"))})
 end
 
 
@@ -252,11 +251,15 @@ end
 
 -- throwable hoe bomb
 minetest.register_entity("farming:hoebomb_entity", {
-	physical = true,
-	visual = "sprite",
-	visual_size = {x = 1.0, y = 1.0},
-	textures = {"farming_hoe_bomb.png"},
-	collisionbox = {-0.1,-0.1,-0.1,0.1,0.1,0.1},
+
+	initial_properties = {
+		physical = true,
+		visual = "sprite",
+		visual_size = {x = 1.0, y = 1.0},
+		textures = {"farming_hoe_bomb.png"},
+		collisionbox = {-0.1,-0.1,-0.1,0.1,0.1,0.1}
+	},
+
 	lastpos = {},
 	player = "",
 
@@ -273,7 +276,7 @@ minetest.register_entity("farming:hoebomb_entity", {
 
 		if self.lastpos.x ~= nil then
 
-			local vel = self.object:getvelocity()
+			local vel = self.object:get_velocity()
 
 			-- only when potion hits something physical
 			if vel.x == 0
@@ -311,20 +314,14 @@ local function throw_potion(itemstack, player)
 		z = playerpos.z
 	}, "farming:hoebomb_entity")
 
+	if not obj then return end
+
 	local dir = player:get_look_dir()
 	local velocity = 20
 
-	obj:setvelocity({
-		x = dir.x * velocity,
-		y = dir.y * velocity,
-		z = dir.z * velocity
-	})
+	obj:set_velocity({x = dir.x * velocity, y = dir.y * velocity, z = dir.z * velocity})
 
-	obj:setacceleration({
-		x = dir.x * -3,
-		y = -9.5,
-		z = dir.z * -3
-	})
+	obj:set_acceleration({x = dir.x * -3, y = -9.5, z = dir.z * -3})
 
 	obj:get_luaentity().player = player
 end
@@ -361,7 +358,7 @@ farming.add_to_scythe_not_drops = function(item)
 end
 
 minetest.register_tool("farming:scythe_mithril", {
-	description = S("Mithril Scythe (Right-click to harvest and replant crops)"),
+	description = S("Mithril Scythe (Use to harvest and replant crops)"),
 	inventory_image = "farming_scythe_mithril.png",
 	sound = {breaks = "default_tool_breaks"},
 
@@ -386,24 +383,13 @@ minetest.register_tool("farming:scythe_mithril", {
 
 		local def = minetest.registered_nodes[node.name]
 
-		if not def then
-			return
-		end
-
-		if not def.drop then
-			return
-		end
-
-		if not def.groups
-		or not def.groups.plant then
+		if not def or not def.drop or not def.groups or not def.groups.plant then
 			return
 		end
 
 		local drops = minetest.get_node_drops(node.name, "")
 
-		if not drops
-		or #drops == 0
-		or (#drops == 1 and drops[1] == "") then
+		if not drops or #drops == 0 or (#drops == 1 and drops[1] == "") then
 			return
 		end
 
@@ -411,6 +397,7 @@ minetest.register_tool("farming:scythe_mithril", {
 		local mname = node.name:split(":")[1]
 		local pname = node.name:split(":")[2]
 		local sname = tonumber(pname:split("_")[2])
+
 		pname = pname:split("_")[1]
 
 		if not sname then
@@ -449,7 +436,7 @@ minetest.register_tool("farming:scythe_mithril", {
 		end
 
 		-- play sound
-		minetest.sound_play("default_grass_footstep", {pos = pos, gain = 1.0})
+		minetest.sound_play("default_grass_footstep", {pos = pos, gain = 1.0}, true)
 
 		local replace = mname .. ":" .. pname .. "_1"
 
@@ -464,7 +451,7 @@ minetest.register_tool("farming:scythe_mithril", {
 
 		if not farming.is_creative(name) then
 
-			itemstack:add_wear(65535 / 150) -- 150 uses
+			itemstack:add_wear(65535 / 350) -- 350 uses
 
 			return itemstack
 		end
@@ -481,34 +468,4 @@ if minetest.get_modpath("moreores") then
 			{"", "", "group:stick"}
 		}
 	})
-
-	farming.register_hoe(":moreores:hoe_silver", {
-		description = S("%s Hoe"):format(S("Silver")),
-		inventory_image = "moreores_tool_silverhoe.png",
-		max_uses = 300,
-		material = "moreores:silver_ingot"
-	})
-
-	farming.register_hoe(":moreores:hoe_mithril", {
-		description = S("%s Hoe"):format(S("Mithril")),
-		inventory_image = "moreores_tool_mithrilhoe.png",
-		max_uses = 1000,
-		material = "moreores:mithril_ingot"
-	})
-
-	-- mesecraft_toolranks support
-	if tr then
-
-		local desc = S("%s Hoe"):format(S("Silver"))
-
-		minetest.override_item("moreores:hoe_silver", {
-			original_description = desc,
-			description = mesecraft_toolranks.create_description(desc)})
-
-		desc = S("%s Hoe"):format(S("Mithril"))
-
-		minetest.override_item("moreores:hoe_mithril", {
-			original_description = desc,
-			description = mesecraft_toolranks.create_description(desc)})
-	end
 end

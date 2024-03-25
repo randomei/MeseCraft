@@ -1,0 +1,17 @@
+# textdomain: castle
+
+#pillars.lua
+Stonebrick=каменнй кирпич
+Stone=камень
+Sandstone=печаник
+Desert Stone=пустынный камень
+Obsidian=обсидиан
+Dungeon Stone=камень подземелья
+Mushroom Trunk=ствол гриба
+Ice Brick=ледяной кирпич
+ Pillar Base= (основание колонны)
+ Pillar Top= (верх колонны)
+ Pillar Middle= (середина колонны)
+
+#town_item.lua
+Crate=ящик

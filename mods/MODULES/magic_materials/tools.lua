@@ -1,5 +1,7 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 minetest.register_tool("magic_materials:pickaxe_arcanite", {
-    description = "Arcanite Pickaxe",
+    description = S"Arcanite Pickaxe",
     inventory_image = "magic_materials_tool_pickaxe_arcanite.png",
     tool_capabilities = {
     full_punch_interval = 0.9,
@@ -14,7 +16,7 @@ minetest.register_tool("magic_materials:pickaxe_arcanite", {
 }) 
 
 minetest.register_tool("magic_materials:shovel_arcanite", {
-    description = "Arcanite Shovel",
+    description = S"Arcanite Shovel",
     inventory_image = "magic_materials_tool_shovel_arcanite.png",
     wield_image = "magic_materials_tool_shovel_arcanite.png^[transformR90",
     tool_capabilities = {
@@ -30,7 +32,7 @@ minetest.register_tool("magic_materials:shovel_arcanite", {
 })
 
 minetest.register_tool("magic_materials:axe_arcanite", {
-    description = "Arcanite Axe",
+    description = S"Arcanite Axe",
     inventory_image = "magic_materials_tool_axe_arcanite.png",
     tool_capabilities = {
         full_punch_interval = 0.9,
@@ -45,7 +47,7 @@ minetest.register_tool("magic_materials:axe_arcanite", {
 })
 
 minetest.register_tool("magic_materials:sword_arcanite", {
-    description = "Arcanite Sword",
+    description = S"Arcanite Sword",
     inventory_image = "magic_materials_tool_sword_arcanite.png",
     tool_capabilities = {
         full_punch_interval = 0.7,
@@ -61,7 +63,7 @@ minetest.register_tool("magic_materials:sword_arcanite", {
 
 if minetest.get_modpath("farming") then
     farming.register_hoe("magic_materials:hoe_arcanite", {
-        description = ("Arcanite Hoe"),
+        description = S"Arcanite Hoe",
         inventory_image = "magic_materials_tool_hoe_arcanite.png",
         max_uses = 200,
         material = "magic_materials:arcanite_crystal"

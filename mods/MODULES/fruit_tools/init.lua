@@ -177,7 +177,7 @@ minetest.register_craft({
     recipe = {
         {"default:diamond", "default:gold_ingot", "default:diamond"},
         {"default:mese_crystal", "vessels:glass_bottle", "default:mese_crystal"},
-        {"default:diamond", "mesecraft_bucket:bucket_water", "default:diamond"}
+        {"default:diamond", "bucket:bucket_water", "default:diamond"}
     },
 })
 
@@ -709,14 +709,14 @@ if minetest.get_modpath("mobs") then
 	end
 end
 
--- Add mesecraft_toolranks support if found
-if minetest.get_modpath("mesecraft_toolranks") then
+-- Add toolranks support if found
+if minetest.get_modpath("toolranks") then
     for i, p in ipairs(tool_item_pairs) do
         local original_description = minetest.registered_tools[p.tool].description
         minetest.override_item(p.tool, {
             original_description = original_description,
-            description = mesecraft_toolranks.create_description(original_description, 0, 1),
-            after_use = mesecraft_toolranks.new_afteruse
+            description = toolranks.create_description(original_description, 0, 1),
+            after_use = toolranks.new_afteruse
         })
     end
 end

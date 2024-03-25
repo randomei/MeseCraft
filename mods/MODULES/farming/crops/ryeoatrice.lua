@@ -1,5 +1,6 @@
 
-local S = farming.intllib
+local S = farming.translate
+local a = farming.recipe_items
 
 --= A nice addition from Ademant's grain mod :)
 
@@ -15,15 +16,18 @@ farming.register_plant("farming:rye", {
 
 minetest.override_item("farming:rye", {
 	description = S("Rye"),
-	groups = {food_rye = 1, flammable = 4}
+	groups = {food_rye = 1, flammable = 4, compostability = 65}
 })
 
+minetest.override_item("farming:rye_1", {drop = {}})
+minetest.override_item("farming:rye_2", {drop = {}})
+minetest.override_item("farming:rye_3", {drop = {}})
+
 minetest.register_craft({
-	type = "shapeless",
 	output = "farming:flour",
 	recipe = {
-		"farming:rye", "farming:rye", "farming:rye", "farming:rye",
-		"farming:mortar_pestle"
+		{"farming:rye", "farming:rye", "farming:rye"},
+		{"farming:rye", a.mortar_pestle, ""}
 	},
 	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}}
 })
@@ -40,62 +44,20 @@ farming.register_plant("farming:oat", {
 
 minetest.override_item("farming:oat", {
 	description = S("Oats"),
-	groups = {food_oats = 1, flammable = 4}
+	groups = {food_oats = 1, flammable = 4, compostability = 65}
 })
 
+minetest.override_item("farming:oat_1", {drop = {}})
+minetest.override_item("farming:oat_2", {drop = {}})
+minetest.override_item("farming:oat_3", {drop = {}})
+
 minetest.register_craft({
-	type = "shapeless",
 	output = "farming:flour",
 	recipe = {
-		"farming:oat", "farming:oat", "farming:oat", "farming:oat",
-		"farming:mortar_pestle"
+		{"farming:oat", "farming:oat", "farming:oat"},
+		{"farming:oat", a.mortar_pestle, ""}
 	},
 	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}}
-})
-
--- Rice
-
-farming.register_plant("farming:rice", {
-	description = S("Rice grains"),
-	paramtype2 = "meshoptions",
-	inventory_image = "farming_rice_seed.png",
-	steps = 8,
-	place_param2 = 3
-})
-
-minetest.override_item("farming:rice", {
-	description = S("Rice"),
-	groups = {food_rice = 1, flammable = 4}
-})
-
-minetest.register_craftitem("farming:rice_bread", {
-	description = S("Rice Bread"),
-	inventory_image = "farming_rice_bread.png",
-	on_use = minetest.item_eat(5),
-	groups = {food_rice_bread = 1, flammable = 2}
-})
-
-minetest.register_craftitem("farming:rice_flour", {
-	description = S("Rice Flour"),
-	inventory_image = "farming_rice_flour.png",
-	groups = {food_rice_flour = 1, flammable = 1}
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "farming:rice_flour",
-	recipe = {
-		"farming:rice", "farming:rice", "farming:rice", "farming:rice",
-		"farming:mortar_pestle"
-	},
-	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}}
-})
-
-minetest.register_craft({
-	type = "cooking",
-	cooktime = 15,
-	output = "farming:rice_bread",
-	recipe = "farming:rice_flour"
 })
 
 -- Multigrain flour
@@ -110,8 +72,8 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "farming:flour_multigrain",
 	recipe = {
-		"farming:wheat", "farming:barley", "farming:oat",
-		"farming:rye", "farming:mortar_pestle"
+		"group:food_wheat", "group:food_barley", "group:food_oats",
+		"group:food_rye", a.mortar_pestle
 	},
 	replacements = {{"group:food_mortar_pestle", "farming:mortar_pestle"}}
 })
@@ -122,7 +84,7 @@ minetest.register_craftitem("farming:bread_multigrain", {
 	description = S("Multigrain Bread"),
 	inventory_image = "farming_bread_multigrain.png",
 	on_use = minetest.item_eat(7),
-	groups = {food_bread = 1, flammable = 2}
+	groups = {food_bread = 1, flammable = 2, compostability = 65}
 })
 
 minetest.register_craft({
@@ -133,12 +95,6 @@ minetest.register_craft({
 })
 
 -- Fuels
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "farming:rice_bread",
-	burntime = 1
-})
 
 minetest.register_craft({
 	type = "fuel",
@@ -155,11 +111,5 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "fuel",
 	recipe = "farming:oat",
-	burntime = 1
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "farming:rice",
 	burntime = 1
 })

@@ -1,20 +1,21 @@
+local S = minetest.get_translator(minetest.get_current_modname())
 
 local colours = {
-	{"black",      "Black",      "#000000b0"},
-	{"blue",       "Blue",       "#015dbb70"},
-	{"brown",      "Brown",      "#a78c4570"},
-	{"cyan",       "Cyan",       "#01ffd870"},
-	{"dark_green", "Dark Green", "#005b0770"},
-	{"dark_grey",  "Dark Grey",  "#303030b0"},
-	{"green",      "Green",      "#61ff0170"},
-	{"grey",       "Grey",       "#5b5b5bb0"},
-	{"magenta",    "Magenta",    "#ff05bb70"},
-	{"orange",     "Orange",     "#ff840170"},
-	{"pink",       "Pink",       "#ff65b570"},
-	{"red",        "Red",        "#ff000070"},
-	{"violet",     "Violet",     "#2000c970"},
-	{"white",      "White",      "#abababc0"},
-	{"yellow",     "Yellow",     "#e3ff0070"},
+	{"black",      S"Black",      "#000000b0"},
+	{"blue",       S"Blue",       "#015dbb70"},
+	{"brown",      S"Brown",      "#a78c4570"},
+	{"cyan",       S"Cyan",       "#01ffd870"},
+	{"dark_green", S"Dark Green", "#005b0770"},
+	{"dark_grey",  S"Dark Grey",  "#303030b0"},
+	{"green",      S"Green",      "#61ff0170"},
+	{"grey",       S"Grey",       "#5b5b5bb0"},
+	{"magenta",    S"Magenta",    "#ff05bb70"},
+	{"orange",     S"Orange",     "#ff840170"},
+	{"pink",       S"Pink",       "#ff65b570"},
+	{"red",        S"Red",        "#ff000070"},
+	{"violet",     S"Violet",     "#2000c970"},
+	{"white",      S"White",      "#abababc0"},
+	{"yellow",     S"Yellow",     "#e3ff0070"},
 }
 
 local stairs_mod = minetest.get_modpath("stairs")
@@ -64,8 +65,8 @@ local function cblocks_stairs(nodename, def)
 			stairs.register_stair_and_slab(name, nodename,
 				def.groups,
 				def.tiles,
-				("%s Stair"):format(def.description),
-				("%s Slab"):format(def.description),
+				(S"%s Stair"):format(def.description),
+				(S"%s Slab"):format(def.description),
 				def.sounds
 			)
 		end
@@ -77,7 +78,7 @@ for i = 1, #colours, 1 do
 -- wood
 
 cblocks_stairs("cblocks:wood_" .. colours[i][1], {
-	description = colours[i][2] .. " Wooden Planks",
+	description = colours[i][2] .. S" Wooden Planks",
 	tiles = {"default_wood.png^[colorize:" .. colours[i][3]},
 	paramtype = "light",
 	is_ground_content = false,
@@ -95,7 +96,7 @@ minetest.register_craft({
 -- stone brick
 
 cblocks_stairs("cblocks:stonebrick_" .. colours[i][1], {
-	description = colours[i][2] .. " Stone Brick",
+	description = colours[i][2] .. S" Stone Brick",
 	tiles = {"default_stone_brick.png^[colorize:" .. colours[i][3]},
 	paramtype = "light",
 	is_ground_content = false,
@@ -113,7 +114,7 @@ minetest.register_craft({
 -- glass (no stairs because they dont support transparant nodes)
 
 minetest.register_node("cblocks:glass_" .. colours[i][1], {
-	description = colours[i][2] .. " Glass",
+	description = colours[i][2] .. S" Glass",
 	tiles = {"cblocks.png^[colorize:" .. colours[i][3]},
 	drawtype = "glasslike",
 	paramtype = "light",

@@ -1,0 +1,33 @@
+# textdomain: bees
+Honey Extractor Machine=
+Flying Bees=
+Wild Bee Hive=
+Bee Hive=
+This hive colony died! Not enough flowers in area.=
+Requires a queen bee to function.=
+Bees are busy making honey!=
+Hive does not have empty frame(s)!=
+Hive requires a queen bee to function!=
+A queen bee is inserted. Add empty frames!=
+Bees are settling in!=
+
+#craftitems.lua
+Empty Hive Frame=
+Filled Hive Frame=
+Bottle of Honey=
+Bees Wax=
+Honeycomb=
+Queen Bee=
+
+#nodes.lua
+Honeycomb Block=
+
+#tools.lua
+Hive Smoker=
+Beehive Grafting Tool=
+
+#bee.lua
+Bee=
+Honey=
+Beehive=
+Honey Block=

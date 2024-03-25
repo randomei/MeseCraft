@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 local function register_sand_decoration(def)
     minetest.register_node(def.id .. "_node", {
-        description = "Sand With " .. def.description,
+        description = S"Sand With " .. def.description,
         tiles = {"default_sand.png^" .. def.overlay, "default_sand.png"},
         groups = {crumbly = 3, falling_node = 1, sand = 1, not_in_creative_inventory = 1},
         sounds = default.node_sound_sand_defaults(),
@@ -87,7 +89,7 @@ local function register_seagrass(def)
                         itemstack:take_item()
                     end
                 else
-                    minetest.chat_send_player(player_name, "Node is protected")
+                    minetest.chat_send_player(player_name, S"Node is protected")
                     minetest.record_protection_violation(pos, player_name)
                 end
             end
@@ -102,21 +104,21 @@ local function register_seagrass(def)
 end
 
 local corals = {
-    "Blue",
-    "Orange",
-    "Pink",
-    "Violet",
-    "Red",
-    "Yellow",
-    "Red",
-    "Green"
+    S"Blue",
+    S"Orange",
+    S"Pink",
+    S"Violet",
+    S"Red",
+    S"Yellow",
+    S"Red",
+    S"Green"
 }
 
 local plantlike_corals = {5, 7, 8, 1, 6}
 
 for k,v in pairs(corals) do
     minetest.register_node("decorations_sea:coral_0" .. k, {
-        description = v .. " Coral",
+        description = v .. S" Coral",
         tiles = {"decorations_sea_coral_node_0" .. k .. ".png"},
         groups = {cracky = 3},
         drop = "default:coral_skeleton",
@@ -126,7 +128,7 @@ end
 
 for k,v in pairs(plantlike_corals) do
     minetest.register_node("decorations_sea:coral_plantlike_0" .. k, {
-        description = "Coral",
+        description = S"Coral",
         drawtype = "plantlike_rooted",
         paramtype2 = "meshoptions",
         place_param2 = 4,
@@ -147,7 +149,7 @@ for i = 1, 6 do
     if i > 3 then height = 1 end
     register_seagrass({
         id = "decorations_sea:seagrass_0" .. i,
-        description = "Seagrass",
+        description = S"Seagrass",
         texture = "decorations_sea_seagrass_0" .. i .. ".png",
         max_height = height,
     })
@@ -156,7 +158,7 @@ end
 for i = 1, 3 do
     register_sand_decoration({
         id = "decorations_sea:seashell_0" .. i,
-        description = "Seashell",
+        description = S"Seashell",
         texture = "decorations_sea_seashell_0" .. i .. ".png",
         overlay = "decorations_sea_seashell_0" .. i .. "_overlay.png"
     })
@@ -165,7 +167,7 @@ end
 for i = 1, 2 do
     register_sand_decoration({
         id = "decorations_sea:starfish_0" .. i,
-        description = "Starfish",
+        description = S"Starfish",
         texture = "decorations_sea_starfish_0" .. i .. ".png",
         overlay = "decorations_sea_starfish_0" .. i .. ".png"
     })
@@ -173,7 +175,7 @@ end
 
 register_seagrass({
     id = "decorations_sea:sea_pickle",
-    description = "Sea Pickle",
+    description = S"Sea Pickle",
     texture = "decorations_sea_pickle.png",
     light_source = 8,
     max_height = 1,

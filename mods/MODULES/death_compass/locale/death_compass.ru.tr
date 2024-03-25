@@ -1,0 +1,17 @@
+# textdomain: death_compass
+1 day=1 день
+@1 days=@1 дней
+1 hour=1 час
+@1 hours=@1 часов
+1 minute=1 минута
+@1 minutes=@1 минут
+1 second=1 секунда
+@1 seconds=@1 секунд
+@1 and @2=@1 и @2
+, =
+@nThis does nothing in its current inert state. If you have this in your@ninventory when you die, however, it will follow you into your next life's @ninventory and point toward the location of your previous life's end.=@nЭто не делает ничего в текущем инертном состоянии. Если это лежит в вашем@nинвентаре, когда вы умерли, тем не менее, то останется в вашем инвентаре @nв следующей жизни, и укажет место, где закончилась предыдущая жизнь.
+The Death Compass' guidance will only last for @1 after death.=Компас смерти будет вести вас только в течение @1 после смерти.
+@nThe Death Compass will point toward your previous corpse until you find it.=@nКомпас смерти укажет в сторону вашего прежнего трупа, пока вы не найдете его.
+@1m to @2's corpse, @3 remaining=@1мин до @2's трупа, @3 осталось
+@1m to @2's corpse, died @3 ago=@1мин до @2's трупа, оставленного @3 назад
+Death Compass=компас смерти

@@ -8,6 +8,8 @@
 --==========================================
 --]]
 
+local S = minetest.get_translator(minetest.get_current_modname())
+
 screwdriver = screwdriver or {}
 
 local candles = {}
@@ -16,70 +18,70 @@ candles.types = {
 	{
 		unlit = "candles:candle",
 		lit = "candles:candle_lit",
-		name = "Candle",
+		name = S"Candle",
 		ingot = nil,
 		image = "candles_candle"
 	},
 	{
 		unlit = "candles:candle_floor_silver",
 		lit = "candles:candle_floor_silver_lit",
-		name = "Silver Candle Stick",
+		name = S"Silver Candle Stick",
 		ingot = "moreores:silver_ingot",
 		image = "candles_candle_silver"
 	},
 	{
 		unlit = "candles:candle_floor_gold",
 		lit = "candles:candle_floor_gold_lit",
-		name = "Gold Candle Stick",
+		name = S"Gold Candle Stick",
 		ingot = "default:gold_ingot",
 		image = "candles_candle_gold"
 	},
 	{
 		unlit = "candles:candle_floor_bronze",
 		lit = "candles:candle_floor_bronze_lit",
-		name = "Bronze Candle Stick",
+		name = S"Bronze Candle Stick",
 		ingot = "default:bronze_ingot",
 		image = "candles_candle_bronze"
 	},
 	{
 		unlit = "candles:candle_wall_silver",
 		lit = "candles:candle_wall_silver_lit",
-		name = "Silver Wall-Mount Candle",
+		name = S"Silver Wall-Mount Candle",
 		ingot = "moreores:silver_ingot",
 		image = "candles_candle_silver"
 	},
 	{
 		unlit = "candles:candle_wall_gold",
 		lit = "candles:candle_wall_gold_lit",
-		name = "Gold Wall-Mount Candle",
+		name = S"Gold Wall-Mount Candle",
 		ingot = "default:gold_ingot",
 		image = "candles_candle_gold"
 	},
 	{
 		unlit = "candles:candle_wall_bronze",
 		lit = "candles:candle_wall_bronze_lit",
-		name = "Bronze Wall-Mount Candle",
+		name = S"Bronze Wall-Mount Candle",
 		ingot = "default:bronze_ingot",
 		image = "candles_candle_bronze"
 	},
 	{
 		unlit = "candles:candelabra_silver",
 		lit = "candles:candelabra_silver_lit",
-		name = "Silver Candelebra",
+		name = S"Silver Candelebra",
 		ingot = "moreores:silver_ingot",
 		image = "candles_candelabra_silver"
 	},
 	{
 		unlit = "candles:candelabra_gold",
 		lit = "candles:candelabra_gold_lit",
-		name = "Gold Candelebra",
+		name = S"Gold Candelebra",
 		ingot = "default:gold_ingot",
 		image = "candles_candelabra_gold"
 	},
 	{
 		unlit = "candles:candelabra_bronze",
 		lit = "candles:candelabra_bronze_lit",
-		name = "Bronze Candelebra",
+		name = S"Bronze Candelebra",
 		ingot = "default:bronze_ingot",
 		image = "candles_candelabra_bronze"
 	},
@@ -525,7 +527,7 @@ candles.create_candelabra = function(ctype)
 end
 
 minetest.register_node("candles:candle", {
-	description = "Candle",
+	description = S"Candle",
 	drawtype = "plantlike",
 	tiles = {"candles_candle.png"},
 	paramtype = "light",
@@ -555,7 +557,7 @@ minetest.register_node("candles:candle", {
 })
 
 minetest.register_node("candles:candle_lit", {
-	description = "Candle",
+	description = S"Candle",
 	drawtype = "plantlike",
 	tiles = {
 		{name="candles_candle_lit.png", animation={type="vertical_frames", aspect_w=32, aspect_h=32, length=1}},
@@ -651,7 +653,7 @@ end
 -- Chandelier
 -----------------
 minetest.register_node("candles:gold_chandelier", {
-	description = "Gold Chandelier",
+	description = S"Gold Chandelier",
 	drawtype = "plantlike",
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -678,7 +680,7 @@ minetest.register_node("candles:gold_chandelier", {
 })
 
 minetest.register_node("candles:gold_chandelier_unlit", {
-	description = "Unlit Gold Chandelier",
+	description = S"Unlit Gold Chandelier",
 	drawtype = "plantlike",
 	paramtype = "light",
 	sunlight_propagates = true,

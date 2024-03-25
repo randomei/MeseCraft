@@ -1,0 +1,39 @@
+# textdomain: bulletin_boards
+
+
+### init.lua ###
+
+#Appended to the title of a bulletin board to indicate how much it costs to post a bulletin here (@1 is a number, @2 is an item name)
+, Cost: @1 @2=, Цена: @1 @2
+#Tooltip. Title of bulletin, author of bulletin, how long ago the bulletin was posted.
+@1@nPosted by @2@n@3 days ago=@1@nОпубликовано @2@n@3 дней назад
+#Button label
+Back to Board=Назад на доску
+#Text area label
+Contents:=Содержание:
+#title of a bulletin board
+Copper Board=медная доска
+#tooltip
+Delete this bulletin=Удалить объявление
+#label
+Delete:=Удалить:
+#Button label
+Next=След.
+#tooltip
+Post bulletin with this icon=Разместить объявление с этой иконкой
+#tooltip
+Post bulletin with this icon at the cost of @1 @2=Разместить объявление с этой иконкой по цене @1 @2
+#tooltip
+Post your bulletin here=Разместить объявление здесь
+#tooltip
+Post your bulletin here for the cost of @1 @2=Разместить объявление здесь с ценой @1 @2
+#label
+Post:=Разместить:
+#player who posted this bulletin
+Posted by @1=Размещено @1
+#Button label, short for "previous"
+Prev=Пред.
+#title of a bulletin board
+Public Bulletin Board=Публичная доска объявлений
+#Text field label
+Title:=Заголовок:

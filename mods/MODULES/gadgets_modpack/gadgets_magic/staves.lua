@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 local plant_list = {
     "default:junglegrass",
     "default:grass_1",
@@ -19,7 +21,7 @@ local plant_list = {
 
 gadgets.register_gadget({
     name = "gadgets_magic:staff_druid",
-    description = "Druid's Staff",
+    description = S"Druid's Staff",
     texture = "gadgets_magic_staff_druid.png",
     light_source = 9,
 
@@ -136,7 +138,7 @@ local earth_staff_blacklist = {
 
 gadgets.register_gadget({
     name = "gadgets_magic:staff_earth",
-    description = "Staff Of Earth",
+    description = S"Staff Of Earth",
     texture = "gadgets_magic_staff_earth.png",
     light_source = 7,
 

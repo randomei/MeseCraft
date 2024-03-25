@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 gadgets.register_effect({
     id = "gadgets_default_effects_speed_1",
-    name = "Speed 1",
+    name = S"Speed 1",
     icon = "gadgets_default_effects_speed_icon.png",
     groups = {"speed"},
     apply = function(player)
@@ -23,7 +25,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_speed_2",
-    name = "Speed 2",
+    name = S"Speed 2",
     icon = "gadgets_default_effects_speed_icon.png",
     groups = {"speed"},
     apply = function(player)
@@ -46,7 +48,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_jump_1",
-    name = "Jump 1",
+    name = S"Jump 1",
     icon = "gadgets_default_effects_jump_icon.png",
     groups = {"jump"},
     apply = function(player)
@@ -69,7 +71,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_jump_2",
-    name = "Jump 2",
+    name = S"Jump 2",
     icon = "gadgets_default_effects_jump_icon.png",
     groups = {"jump"},
     apply = function(player)
@@ -92,7 +94,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_gravity_1",
-    name = "Gravity 1",
+    name = S"Gravity 1",
     icon = "gadgets_default_effects_gravity_icon.png",
     groups = {"gravity"},
     apply = function(player)
@@ -115,7 +117,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_gravity_2",
-    name = "Gravity 2",
+    name = S"Gravity 2",
     icon = "gadgets_default_effects_gravity_icon.png",
     groups = {"gravity"},
     apply = function(player)
@@ -138,7 +140,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_health_regen",
-    name = "Health Regen",
+    name = S"Health Regen",
     icon = "gadgets_default_effects_health_regen_icon.png",
     groups = {"health_regen"},
     apply = function(player)
@@ -159,7 +161,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_water_breath",
-    name = "Water Breath",
+    name = S"Water Breath",
     icon = "gadgets_default_effects_water_breath_icon.png",
     groups = {"water_breath"},
     apply = function(player)
@@ -180,7 +182,7 @@ gadgets.register_effect({
 
 gadgets.register_effect({
     id = "gadgets_default_effects_fire_shield",
-    name = "Fire Shield",
+    name = S"Fire Shield",
     icon = "gadgets_default_effects_fire_shield_icon.png",
     groups = {"fire_shield"},
     apply = function(player)
@@ -211,7 +213,7 @@ gadgets.register_effect({
 if minetest.get_modpath("sprint_lite") then
     gadgets.register_effect({
         id = "gadgets_default_effects_stamina_regen",
-        name = "Stamina Regen",
+        name = S"Stamina Regen",
         icon = "gadgets_default_effects_stamina_regen_icon.png",
         groups = {"stamina_regen"},
         apply = function(player)
@@ -235,7 +237,7 @@ end
 if minetest.get_modpath("mana") then
     gadgets.register_effect({
         id = "gadgets_default_effects_mana_regen",
-        name = "Mana Regen",
+        name = S"Mana Regen",
         icon = "gadgets_default_effects_mana_regen_icon.png",
         groups = {"mana_regen"},
         apply = function(player)

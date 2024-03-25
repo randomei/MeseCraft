@@ -1,10 +1,10 @@
 # textdomain: fire
-Fire=Огонь
-Permanent Fire=Вечный Огонь
-Flint and Steel=Огниво
+Fire=огонь
+Permanent Fire=вечный огонь
+Flint and Steel=огниво
 
 
 ##### not used anymore #####
 
 # textdomain: fire
-Permanent Flame=Вечный Огонь
+Permanent Flame=вечный огонь

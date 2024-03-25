@@ -1,5 +1,6 @@
 
-local S = farming.intllib
+local S = farming.translate
+local a = farming.recipe_items
 
 -- place cocoa
 local function place_cocoa(itemstack, placer, pointed_thing, plantname)
@@ -22,11 +23,11 @@ local function place_cocoa(itemstack, placer, pointed_thing, plantname)
 	-- thanks to Krock for helping with this issue :)
 	local def = minetest.registered_nodes[under.name]
 	if placer and itemstack and def and def.on_rightclick then
-		return def.on_rightclick(pt.under, under, placer, itemstack)
+		return def.on_rightclick(pt.under, under, placer, itemstack, pt)
 	end
 
 	-- check if pointing at jungletree
-	if under.name ~= "default:jungletree"
+	if (under.name ~= "default:jungletree" and under.name ~= "mcl_core:jungletree")
 	or minetest.get_node(pt.above).name ~= "air" then
 		return
 	end
@@ -54,7 +55,7 @@ local function place_cocoa(itemstack, placer, pointed_thing, plantname)
 			minetest.after(0.20,
 				farming.refill_plant,
 				placer,
-				"farming:cocoa_beans",
+				"farming:cocoa_beans_raw",
 				placer:get_wield_index()
 			)
 		end
@@ -64,20 +65,31 @@ local function place_cocoa(itemstack, placer, pointed_thing, plantname)
 end
 
 -- cocoa beans
-minetest.register_craftitem("farming:cocoa_beans", {
-	description = S("Cocoa Beans"),
-	inventory_image = "farming_cocoa_beans.png",
-	groups = {seed = 2, food_cocoa = 1, flammable = 2},
+minetest.register_craftitem("farming:cocoa_beans_raw", {
+	description = S("Raw Cocoa Beans"),
+	inventory_image = "farming_cocoa_beans.png^[brighten",
+	groups = {compostability = 48, seed = 1, flammable = 2},
 	on_place = function(itemstack, placer, pointed_thing)
 		return place_cocoa(itemstack, placer, pointed_thing, "farming:cocoa_1")
 	end
 })
 
+minetest.register_craftitem("farming:cocoa_beans", {
+	description = S("Cocoa Beans"),
+	inventory_image = "farming_cocoa_beans.png",
+	groups = {compostability = 65, food_cocoa = 1, flammable = 2}
+})
+
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 5,
+	output = "farming:cocoa_beans",
+	recipe = "farming:cocoa_beans_raw"
+})
+
 minetest.register_craft( {
-	output = "dye:brown 2",
-	recipe = {
-		{ "farming:cocoa_beans" }
-	}
+	output = a.dye_brown,
+	recipe = {{"farming:cocoa_beans"}}
 })
 
 -- chocolate cookie
@@ -97,7 +109,6 @@ minetest.register_craft( {
 -- bar of dark chocolate (thanks to Ice Pandora for her deviantart.com chocolate tutorial)
 minetest.register_craftitem("farming:chocolate_dark", {
 	description = S("Bar of Dark Chocolate"),
-	groups = {food_chocolate = 1},
 	inventory_image = "farming_chocolate_dark.png",
 	on_use = minetest.item_eat(3)
 })
@@ -115,7 +126,7 @@ minetest.register_node("farming:chocolate_block", {
 	tiles = {"farming_chocolate_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, oddly_breakable_by_hand = 2},
-	sounds = default.node_sound_stone_defaults()
+	sounds = farming.sounds.node_sound_stone_defaults()
 })
 
 minetest.register_craft({
@@ -129,9 +140,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	output = "farming:chocolate_dark 9",
-	recipe = {
-		{"farming:chocolate_block"}
-	}
+	recipe = {{"farming:chocolate_block"}}
 })
 
 -- cocoa definition
@@ -140,25 +149,24 @@ local def = {
 	tiles = {"farming_cocoa_1.png"},
 	paramtype = "light",
 	walkable = false,
-	drop = {
-		items = {
-			{items = {"farming:cocoa_beans 1"}, rarity = 2},
-		}
-	},
 	selection_box = {
 		type = "fixed",
 		fixed = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.3}
 	},
+	drop = {},
 	groups = {
-		snappy = 3, flammable = 2, plant = 1, growing = 1,
+		handy = 1, snappy = 3, flammable = 2, plant = 1, growing = 1,
 		not_in_creative_inventory = 1, leafdecay = 1, leafdecay_drop = 1
 	},
-	sounds = default.node_sound_leaves_defaults(),
+	sounds = farming.sounds.node_sound_leaves_defaults(),
 	growth_check = function(pos, node_name)
-		if minetest.find_node_near(pos, 1, {"default:jungletree"}) then
-			return false
+
+		if minetest.find_node_near(pos, 1,
+				{"default:jungletree", "mcl_core:jungletree"}) then
+			return true -- place next growth stage
 		end
-		return true
+
+		return false -- condition not met, skip growth stage until next check
 	end
 }
 
@@ -173,7 +181,7 @@ minetest.register_node("farming:cocoa_2", table.copy(def))
 def.tiles = {"farming_cocoa_3.png"}
 def.drop = {
 	items = {
-		{items = {"farming:cocoa_beans 1"}, rarity = 1}
+		{items = {"farming:cocoa_beans_raw 1"}, rarity = 1}
 	}
 }
 minetest.register_node("farming:cocoa_3", table.copy(def))
@@ -184,21 +192,25 @@ def.groups.growing = nil
 def.growth_check = nil
 def.drop = {
 	items = {
-		{items = {"farming:cocoa_beans 2"}, rarity = 1},
-		{items = {"farming:cocoa_beans 1"}, rarity = 2},
-		{items = {"farming:cocoa_beans 1"}, rarity = 4}
+		{items = {"farming:cocoa_beans_raw 2"}, rarity = 1},
+		{items = {"farming:cocoa_beans_raw 1"}, rarity = 2},
+		{items = {"farming:cocoa_beans_raw 1"}, rarity = 4}
 	}
 }
 minetest.register_node("farming:cocoa_4", table.copy(def))
 
 -- add to registered_plants
 farming.registered_plants["farming:cocoa_beans"] = {
+	trellis = "default:jungletree",
 	crop = "farming:cocoa",
-	seed = "farming:cocoa_beans",
-	minlight = 13,
-	maxlight = 15,
+	seed = "farming:cocoa_beans_raw",
+	minlight = farming.min_light,
+	maxlight = farming.max_light,
 	steps = 4
 }
+
+-- localize math.random for speed
+local random = math.random
 
 -- add random cocoa pods to jungle tree's
 minetest.register_on_generated(function(minp, maxp)
@@ -208,16 +220,18 @@ minetest.register_on_generated(function(minp, maxp)
 	end
 
 	local pos, dir
-	local cocoa = minetest.find_nodes_in_area(minp, maxp, "default:jungletree")
+	local cocoa = minetest.find_nodes_in_area(minp, maxp,
+			{"default:jungletree", "mcl_core:jungletree"})
 
 	for n = 1, #cocoa do
 
 		pos = cocoa[n]
 
 		if minetest.find_node_near(pos, 1,
-			{"default:jungleleaves", "moretrees:jungletree_leaves_green"}) then
+			{"default:jungleleaves", "moretrees:jungletree_leaves_green",
+			"mcl_core:jungleleaves"}) then
 
-			dir = math.random(1, 80)
+			dir = random(80)
 
 			    if dir == 1 then pos.x = pos.x + 1
 			elseif dir == 2 then pos.x = pos.x - 1
@@ -232,7 +246,7 @@ minetest.register_on_generated(function(minp, maxp)
 --print ("Cocoa Pod added at " .. minetest.pos_to_string(pos))
 
 				minetest.swap_node(pos, {
-					name = "farming:cocoa_" .. tostring(math.random(4))
+					name = "farming:cocoa_" .. tostring(random(4))
 				})
 			end
 		end

@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 bweapons.register_ammo({
     name = "bweapons_bows_pack:arrow",
-    description = "Arrow",
+    description = S"Arrow",
     texture = "bweapons_bows_pack_arrow.png",
     recipe = {
         {
@@ -14,7 +16,7 @@ bweapons.register_ammo({
 
 bweapons.register_ammo({
     name = "bweapons_bows_pack:bolt",
-    description = "Bolt",
+    description = S"Bolt",
     texture = "bweapons_bows_pack_bolt.png",
     recipe = {
         {

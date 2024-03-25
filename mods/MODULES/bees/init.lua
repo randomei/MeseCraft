@@ -21,6 +21,8 @@
 --VARIABLES
   local bees = {}
   local formspecs = {}
+  
+  local S = minetest.get_translator(minetest.get_current_modname())
 
 --FUNCTIONS
   function formspecs.hive_wild(pos, grafting)
@@ -55,7 +57,7 @@
     end
   end
   minetest.register_node('bees:extractor', {
-    description = 'Honey Extractor Machine',
+    description = S'Honey Extractor Machine',
     tiles = {"bees_extractor_top.png", "bees_extractor_bottom.png", "bees_extractor_side.png", "bees_extractor_side.png", "bees_extractor_side.png", "bees_extractor_front.png"},
     paramtype = "light",
     paramtype2 = "facedir",
@@ -196,7 +198,7 @@
   })
 
   minetest.register_node('bees:bees', {
-    description = 'Flying Bees',
+    description = S'Flying Bees',
     drawtype = 'plantlike',
     paramtype = 'light',
     groups = { not_in_creative_inventory=1 },
@@ -212,7 +214,7 @@
     pointable = false,
   })
   minetest.register_node('bees:hive_wild', {
-    description = 'Wild Bee Hive',
+    description = S'Wild Bee Hive',
     tiles = {"bees_hive_wild.png"}, --texture from church_candles.
     drawtype = "plantlike",
     paramtype = 'light',
@@ -234,7 +236,7 @@
       local flowers = minetest.find_nodes_in_area(minp, maxp, 'group:flower')
       if #flowers == 0 then 
         inv:set_stack('queen', 1, '')
-        meta:set_string('infotext', 'This hive colony died! Not enough flowers in area.')
+        meta:set_string('infotext', S'This hive colony died! Not enough flowers in area.')
         return 
       end --not any flowers nearby The queen dies!
       if #flowers < 3 then return end --requires 2 or more flowers before can make honey
@@ -319,7 +321,7 @@
   })
 
   minetest.register_node('bees:hive_artificial', {
-    description = 'Bee Hive',
+    description = S'Bee Hive',
     tiles = {'default_wood.png','default_wood.png','default_wood.png', 'default_wood.png','default_wood.png','bees_hive_artificial.png'},
     drawtype = 'nodebox',
     paramtype = 'light',
@@ -344,7 +346,7 @@
       meta:set_int('agressive', 1)
       inv:set_size('queen', 1)
       inv:set_size('frames', 8)
-      meta:set_string('infotext','Requires a queen bee to function.')
+      meta:set_string('infotext',S'Requires a queen bee to function.')
     end,
     on_rightclick = function(pos, node, clicker, itemstack)
       minetest.show_formspec(
@@ -381,10 +383,10 @@
               end
             end
           else
-            meta:set_string('infotext', 'Bees are busy making honey!')
+            meta:set_string('infotext', S'Bees are busy making honey!')
           end
         else
-          meta:set_string('infotext', 'Hive does not have empty frame(s)!')
+          meta:set_string('infotext', S'Hive does not have empty frame(s)!')
           timer:stop()
         end
       end
@@ -393,7 +395,7 @@
       if listname == 'queen' then
         local timer = minetest.get_node_timer(pos)
         local meta = minetest.get_meta(pos)
-        meta:set_string('infotext','Hive requires a queen bee to function!')
+        meta:set_string('infotext',S'Hive requires a queen bee to function!')
         timer:stop()
       end
     end,
@@ -418,10 +420,10 @@
       local timer = minetest.get_node_timer(pos)
       if listname == 'queen' or listname == 'frames' then
         meta:set_string('queen', stack:get_name())
-        meta:set_string('infotext','A queen bee is inserted. Add empty frames!');
+        meta:set_string('infotext',S'A queen bee is inserted. Add empty frames!');
         if inv:contains_item('frames', 'bees:frame_empty') then
           timer:start(30)
-          meta:set_string('infotext','Bees are settling in!');
+          meta:set_string('infotext',S'Bees are settling in!');
         end
       end
     end,

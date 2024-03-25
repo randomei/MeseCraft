@@ -1,3 +1,5 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 local carpet_proto = {
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -29,7 +31,7 @@ function carpets.register(material, def)
 	end
 
 	local material_def = minetest.registered_nodes[material]
-	node.description = node.description or material_def.description.." Carpet"
+	node.description = node.description or material_def.description..S" Carpet"
 	node.sounds = table.copy(node.sounds or material_def.sounds or default.node_sound_defaults())
 	node.groups = table.copy(node.groups)
 

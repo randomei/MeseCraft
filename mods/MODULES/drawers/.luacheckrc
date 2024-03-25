@@ -23,7 +23,7 @@ read_globals = {
 	"mcl_sounds",
 	"pipeworks",
 	"screwdriver",
-	"intllib",
 	"digilines",
-	"mesecon"
+	"mesecon",
+	"techage"
 }
